@@ -36,10 +36,11 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\Enemy1.cs" />
+     <Compile Include="Assets\Scripts\Enemies.cs" />
      <Compile Include="Assets\Scripts\Player1.cs" />
      <Compile Include="Assets\Scripts\Player2.cs" />
-     <Compile Include="Assets\Scripts\Spawn_Manager.cs" />
+     <Compile Include="Assets\Scripts\spawnManager.cs" />
+     <Compile Include="Assets\Scripts\targetPoint.cs" />
     <Reference Include="UnityEngine">
         <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.14f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
