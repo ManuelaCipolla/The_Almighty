@@ -777,6 +777,7 @@ MonoBehaviour:
   curHealth: 3
   maxHealth: 3
   _maxFuel: 100
+  _currentFuel: 0
   _fuelSlider: {fileID: 1411566440}
   _fuelBurnRate: 5
 --- !u!212 &1058228361
