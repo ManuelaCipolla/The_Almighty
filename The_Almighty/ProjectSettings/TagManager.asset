@@ -7,7 +7,10 @@ TagManager:
   - Enemy
   - Player2
   - Player1
-  - PlayButton_Menu
+  - PlayButton
+  - StoreButton
+  - SettingButton
+  - ExitButton
   layers:
   - Default
   - TransparentFX
@@ -17,7 +20,7 @@ TagManager:
   - UI
   - 
   - 
-  - Buttons UI
+  - 
   - 
   - 
   - 
@@ -44,4 +47,13 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: background
+    uniqueID: 1258194811
+    locked: 0
+  - name: UI Button
+    uniqueID: 3844899433
+    locked: 0
+  - name: Player
+    uniqueID: 1306569137
     locked: 0
