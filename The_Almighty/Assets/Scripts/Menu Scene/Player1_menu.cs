@@ -11,8 +11,15 @@ public class Player1_menu : MonoBehaviour
     //UI
     private bool _StoreEnter = false;
     private bool _PlayEnter = false;
-    private bool _SettingEnter = false;
+    public bool _SettingEnter = false;
     private bool _ExitEnter = false;
+
+    //gameobjects
+    public GameObject MainMenu;
+    public GameObject Options;
+    public GameObject Player1;
+
+    
 
     void Start()
     {
@@ -24,7 +31,12 @@ public class Player1_menu : MonoBehaviour
         //Boundaries of screen
         transform.position = new Vector3(transform.position.x, Mathf.Clamp(transform.position.y, -5, 5),0);
         transform.position = new Vector3(Mathf.Clamp(transform.position.x, -3.5f, 3.5f), transform.position.y, 0);
-        Movement();
+
+        if(_SettingEnter != true)
+        {
+            Movement();
+        }
+
         UIButtons();
     }
 
@@ -49,7 +61,9 @@ public class Player1_menu : MonoBehaviour
         if(_SettingEnter == true && Input.GetButtonDown("Submit")) //Setting button
         {
             Debug.Log("Setting true");
-            SceneManager.LoadScene("Settings");
+            Options.SetActive(true);
+            MainMenu.SetActive(false);
+            Player1.SetActive(false);
         }
 
         if(_StoreEnter == true && Input.GetButtonDown("Submit")) //Store button
@@ -57,12 +71,18 @@ public class Player1_menu : MonoBehaviour
             Debug.Log("Store true");
             SceneManager.LoadScene("Store");
         }
+
+        if(_ExitEnter == true && Input.GetButtonDown("Submit")) //Exit button
+        {
+            QuitGame();
+            Debug.Log("Exit true");
+        }
     }
 
     void OnTriggerEnter2D(Collider2D Collision) 
     { 
         
-        if(Collision.CompareTag("PlayButton"))//PlayButton
+        if(Collision.CompareTag("PlayButton"))//Play Button
         {
             _PlayEnter = true;
             Debug.Log("yay");
@@ -85,6 +105,19 @@ public class Player1_menu : MonoBehaviour
             _StoreEnter = true;
             Debug.Log("Store works");
         } 
+
+        if(Collision.CompareTag("ExitButton")) //Exit button
+        {
+            _ExitEnter = true;
+            Debug.Log("Exit works");
+        }
     } 
+
+    public void QuitGame()
+    {
+        Application.Quit();
+        Debug.Log("QUIT");
+    }
+    
 }
 

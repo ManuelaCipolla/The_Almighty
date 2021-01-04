@@ -20,7 +20,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - Options
   - 
   - 
   - 
@@ -51,9 +51,12 @@ TagManager:
   - name: background
     uniqueID: 1258194811
     locked: 0
-  - name: UI Button
+  - name: Main Menu
     uniqueID: 3844899433
     locked: 0
   - name: Player
     uniqueID: 1306569137
+    locked: 0
+  - name: Options
+    uniqueID: 3853618095
     locked: 0
