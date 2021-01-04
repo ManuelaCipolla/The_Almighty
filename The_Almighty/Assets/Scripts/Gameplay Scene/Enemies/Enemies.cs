@@ -41,5 +41,13 @@ public class Enemies : MonoBehaviour
             Destroy(gameObject);
         }
     }
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Player1")
+        {
+
+            Destroy(gameObject);
+        }
+    }
 
 }

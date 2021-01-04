@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class Player2 : MonoBehaviour
 {
     [SerializeField]
@@ -50,6 +50,8 @@ public class Player2 : MonoBehaviour
     void Die() //literal death (in game and real life wowa)
     {
         Debug.Log("YOU DEAD FUCKER number 2");
+        Destroy(gameObject, 1);
+        SceneManager.LoadScene("Game Over");
         //Application.LoadLevel(Application.loadedLevel);  [Application does not contain a definition for loadLevel]
     }
     

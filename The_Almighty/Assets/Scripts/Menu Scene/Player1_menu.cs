@@ -14,6 +14,8 @@ public class Player1_menu : MonoBehaviour
     public bool _SettingEnter = false;
     private bool _ExitEnter = false;
 
+    private bool PlayerSettings = false;
+
     //gameobjects
     public GameObject MainMenu;
     public GameObject Options;
@@ -23,7 +25,7 @@ public class Player1_menu : MonoBehaviour
 
     void Start()
     {
-        transform.position = new Vector3(-2, -3.5f, 0);
+        transform.position = new Vector3(0.04f, -2.67f, 0);
     }
 
     void Update()
@@ -32,7 +34,7 @@ public class Player1_menu : MonoBehaviour
         transform.position = new Vector3(transform.position.x, Mathf.Clamp(transform.position.y, -5, 5),0);
         transform.position = new Vector3(Mathf.Clamp(transform.position.x, -3.5f, 3.5f), transform.position.y, 0);
 
-        if(_SettingEnter != true)
+        if(PlayerSettings != true)
         {
             Movement();
         }
@@ -61,6 +63,7 @@ public class Player1_menu : MonoBehaviour
         if(_SettingEnter == true && Input.GetButtonDown("Submit")) //Setting button
         {
             Debug.Log("Setting true");
+            PlayerSettings = true;
             Options.SetActive(true);
             MainMenu.SetActive(false);
             Player1.SetActive(false);

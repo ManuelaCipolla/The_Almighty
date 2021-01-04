@@ -11,6 +11,7 @@ TagManager:
   - StoreButton
   - SettingButton
   - ExitButton
+  - Fuel
   layers:
   - Default
   - TransparentFX

@@ -20,6 +20,10 @@ public class Player1 : MonoBehaviour
     private Slider _fuelSlider;
     [SerializeField]
     private float _fuelBurnRate = 20f;
+
+    [SerializeField]
+    private float _fuelRecharge;
+    
     
     void Start()
     {
@@ -98,13 +102,19 @@ public class Player1 : MonoBehaviour
             Debug.Log("something smart");
             curHealth --;
         }
+        if(collision.gameObject.tag == "Fuel")
+        {
+            Debug.Log("Fuel up baby");
+            _currentFuel = _currentFuel + _fuelRecharge;
+            _currentFuel = _maxFuel;
+        }
     }
 
         void Death() //literal death (in game and real life wowa)
     {
         Debug.Log("YOU DEAD FUCKER");
         Destroy(gameObject, 1);
-        SceneManager.LoadScene("Game Over");
+        SceneManager.LoadScene("Gameplay");
         //Application.LoadLevel(Application.loadedLevel);  [Application does not contain a definition for loadLevel]
     }
 }
