@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Player1_menu : MonoBehaviour
 {
@@ -20,12 +21,17 @@ public class Player1_menu : MonoBehaviour
     public GameObject MainMenu;
     public GameObject Options;
     public GameObject Player1;
-
-    public OptionMenu OptionScript;
+    Button Back;
+    
 
     void Start()
-    {
+    {      
+        //Spawn position
         transform.position = new Vector3(0.04f, -2.67f, 0);
+
+        //backbutton
+        Button btn = Back.GetComponent<Button>();
+        btn.onClick.AddListener(TaskOnClick);
     }
 
     void Update()
@@ -34,7 +40,7 @@ public class Player1_menu : MonoBehaviour
         transform.position = new Vector3(transform.position.x, Mathf.Clamp(transform.position.y, -5, 5),0);
         transform.position = new Vector3(Mathf.Clamp(transform.position.x, -3.5f, 3.5f), transform.position.y, 0);
 
-        OptionScript = gameObject.GetComponent<OptionMenu>();
+        //movement 
         if(PlayerSettings != true)
         {
             Movement();
@@ -55,9 +61,9 @@ public class Player1_menu : MonoBehaviour
     private void UIButtons ()
     {
         //PlayButton it needs to check it per frame if player enter is true.
-        if (_PlayEnter == true && Input.GetButtonDown("Submit"))
+        if (_PlayEnter == true && Input.GetButtonDown("Submit")) //Gameplay button
         {
-            Debug.Log("It works");
+            Debug.Log("Gameplay true");
             SceneManager.LoadScene("Gameplay");
         }
 
@@ -89,19 +95,13 @@ public class Player1_menu : MonoBehaviour
         if(Collision.CompareTag("PlayButton"))//Play Button
         {
             _PlayEnter = true;
-            Debug.Log("yay");
+            Debug.Log("Gameplay works");
         }
 
         if(Collision.CompareTag("SettingButton")) //Setting button
         {
             _SettingEnter = true;
             Debug.Log("Setting works");
-        }
-
-        if(Collision.CompareTag("ExitButton"))
-        {
-            _ExitEnter = true;
-            Debug.Log("Exit works");
         }
 
         if(Collision.CompareTag("StoreButton")) //Store button
@@ -117,7 +117,17 @@ public class Player1_menu : MonoBehaviour
         }
     } 
 
-    public void QuitGame()
+        public void TaskOnClick() // Back Button
+    {
+        Debug.Log("it work this bad bad button");
+        Options.SetActive(false);
+        MainMenu.SetActive(true);
+        Player1.SetActive(true);
+        PlayerSettings = false;
+        
+    }
+
+    public void QuitGame() // exit game
     {
         Application.Quit();
         Debug.Log("QUIT");
