@@ -20,6 +20,8 @@ public class OptionMenu : MonoBehaviour
     public void TaskOnClick()
     {
         Debug.Log("it work this bad bad button");
+        Options.SetActive(false);
+        MainMenu.SetActive(true);
     }
     /*public void btnSetActive()
     {

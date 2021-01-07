@@ -8,7 +8,7 @@ public class ChangeScene : MonoBehaviour
 
     public void btnNewScene()
     {
-        SceneManager.LoadScene("Gameplay");
+        SceneManager.LoadScene("Main Menu");
     }
 
 }
