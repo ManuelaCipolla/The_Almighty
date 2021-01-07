@@ -48,6 +48,11 @@ public class Enemies : MonoBehaviour
 
             Destroy(gameObject);
         }
+
+        if(collision.gameObject.tag == "Player2")
+        {
+            Destroy(gameObject);
+        }
     }
 
 }

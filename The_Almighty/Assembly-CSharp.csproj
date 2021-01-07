@@ -36,6 +36,7 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\GameManager.cs" />
      <Compile Include="Assets\Scripts\Gameplay Scene\Enemies\Enemies.cs" />
      <Compile Include="Assets\Scripts\Gameplay Scene\Enemies\spawnManager.cs" />
      <Compile Include="Assets\Scripts\Gameplay Scene\Enemies\targetPoint.cs" />
@@ -44,7 +45,7 @@
      <Compile Include="Assets\Scripts\Gameplay Scene\HUD_p2.cs" />
      <Compile Include="Assets\Scripts\Gameplay Scene\Player1.cs" />
      <Compile Include="Assets\Scripts\Menu Scene\Player1_menu.cs" />
-     <Compile Include="Assets\Scripts\Menu Scene\SpawnP2.cs" />
+     <Compile Include="Assets\Scripts\PersistentData.cs" />
      <Compile Include="Assets\Scripts\Player2.cs" />
      <Compile Include="Assets\Scripts\TitleScreen\TitleScreen.cs" />
     <Reference Include="UnityEngine">

@@ -6,30 +6,29 @@ using UnityEngine.UI;
 public class HUD_p2 : MonoBehaviour
 {
 
-    /*public Sprite[] HeartSprites2;
+    public Sprite[] HeartSprites2;
     public Image HeartUI2;
     private Player2 Player2;
 
-    private bool OnactiveUI2 = false;
-
+    private GameObject heartHUD2;
 
     void Start()
     {
-        GetComponent<SpawnP2>();
         Player2 = GameObject.FindGameObjectWithTag("Player2").GetComponent<Player2>();
-        
+        heartHUD2.SetActive(false);
     }
 
 
     void Update()
     {
-        OnactiveUI2 = HeartUI2;
-        if (GetComponent<SpawnP2>().p2alive != false)
+        HeartUI2.sprite = HeartSprites2[Player2.curHealthP2];
+        
+        
+        if (GetComponent<GameManager>().player2Active == true)
         {   
-            OnactiveUI2 = true;
-           // HeartUI2 = Visible;
-            HeartUI2.sprite = HeartSprites2[Player2.curHealthP2];
+            heartHUD2.SetActive(true);
         }
+
     }
-    */
+    
 }

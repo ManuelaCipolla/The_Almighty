@@ -10,6 +10,7 @@ public class Player2 : MonoBehaviour
     //stats
     public int curHealthP2;
     public int maxHealth = 3;
+
     void Start()
     {
         //spawning point
@@ -25,6 +26,8 @@ public class Player2 : MonoBehaviour
         //boundaries
         transform.position = new Vector3(transform.position.x, Mathf.Clamp(transform.position.y, -5, 5),0);
         transform.position = new Vector3(Mathf.Clamp(transform.position.x, -3.5f, 3.5f), transform.position.y, 0);
+        
+        Health();
     }
 
     void Movement() //Player movement
@@ -34,7 +37,10 @@ public class Player2 : MonoBehaviour
 
         Vector3 direction = new Vector3 (HorizontalInput, VerticalInput, 0);
         transform.Translate(direction * _speed * Time.deltaTime);
+    }
 
+    void Health()
+    {
         //Health
         if(curHealthP2 > maxHealth)
         {
@@ -45,14 +51,22 @@ public class Player2 : MonoBehaviour
         {
             Die();
         }
+    }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.tag == "Enemy")
+        {
+            Debug.Log("hit p2");
+            curHealthP2 --;
+        }
 
     }
     void Die() //literal death (in game and real life wowa)
     {
         Debug.Log("YOU DEAD FUCKER number 2");
         Destroy(gameObject, 1);
-        SceneManager.LoadScene("Game Over");
-        //Application.LoadLevel(Application.loadedLevel);  [Application does not contain a definition for loadLevel]
+        SceneManager.LoadScene("Gameplay");
     }
     
 }
