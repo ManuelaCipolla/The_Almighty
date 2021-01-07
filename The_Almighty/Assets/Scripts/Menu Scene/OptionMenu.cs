@@ -7,6 +7,8 @@ public class OptionMenu : MonoBehaviour
 {
     public GameObject MainMenu;
     public GameObject Options;
+    public GameObject Player1;
+public Player1_menu PlayerScript;
 
     Button Back;
 
@@ -22,11 +24,10 @@ public class OptionMenu : MonoBehaviour
         Debug.Log("it work this bad bad button");
         Options.SetActive(false);
         MainMenu.SetActive(true);
-    }
-    /*public void btnSetActive()
-    {
+        Player1.SetActive(true);
+        PlayerScript = gameObject.GetComponent<Player1_menu>();
+        PlayerScript.PlayerSettings = false;
         
-        MainMenu.SetActive(true);
-        Options.SetActive(false);
-    }*/
+    }
+
 }

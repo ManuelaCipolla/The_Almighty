@@ -14,14 +14,14 @@ public class Player1_menu : MonoBehaviour
     public bool _SettingEnter = false;
     private bool _ExitEnter = false;
 
-    private bool PlayerSettings = false;
+    public bool PlayerSettings = false;
 
     //gameobjects
     public GameObject MainMenu;
     public GameObject Options;
     public GameObject Player1;
 
-    
+    public OptionMenu OptionScript;
 
     void Start()
     {
@@ -34,6 +34,7 @@ public class Player1_menu : MonoBehaviour
         transform.position = new Vector3(transform.position.x, Mathf.Clamp(transform.position.y, -5, 5),0);
         transform.position = new Vector3(Mathf.Clamp(transform.position.x, -3.5f, 3.5f), transform.position.y, 0);
 
+        OptionScript = gameObject.GetComponent<OptionMenu>();
         if(PlayerSettings != true)
         {
             Movement();
