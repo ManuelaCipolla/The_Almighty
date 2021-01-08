@@ -114,7 +114,7 @@ public class Player1 : MonoBehaviour
     {
         Debug.Log("YOU DEAD FUCKER");
         Destroy(gameObject, 1);
-        SceneManager.LoadScene("Gameplay");
+        SceneManager.LoadScene("Game Over");
         
     }
 }

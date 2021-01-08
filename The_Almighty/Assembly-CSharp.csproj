@@ -37,6 +37,7 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\GameManager.cs" />
+     <Compile Include="Assets\Scripts\GameOver Scene\gameOver_Script.cs" />
      <Compile Include="Assets\Scripts\Gameplay Scene\Enemies\Enemies.cs" />
      <Compile Include="Assets\Scripts\Gameplay Scene\Enemies\spawnManager.cs" />
      <Compile Include="Assets\Scripts\Gameplay Scene\Enemies\targetPoint.cs" />

@@ -22,12 +22,18 @@ public class Player1_menu : MonoBehaviour
     public GameObject Options;
     public GameObject Player1;
     Button Back;
+
+    //HighScore
+    public Text highScore;
     
 
     void Start()
     {      
         //Spawn position
         transform.position = new Vector3(0.04f, -2.67f, 0);
+
+        //HighScore
+        highScore.text = "HIGHSCORE " + Mathf.Round(PlayerPrefs.GetFloat("highScore"));
 
         //backbutton
         Button btn = Back.GetComponent<Button>();
