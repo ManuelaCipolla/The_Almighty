@@ -783,12 +783,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b567709f9953a7840830aedcb509bea0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HeartSprites2:
-  - {fileID: -579870504741873330, guid: 969778929b0148f489beb40e3469e2c6, type: 3}
-  - {fileID: 934018478484794000, guid: 969778929b0148f489beb40e3469e2c6, type: 3}
-  - {fileID: -700189029222056500, guid: 969778929b0148f489beb40e3469e2c6, type: 3}
-  - {fileID: -2749372850734537964, guid: 969778929b0148f489beb40e3469e2c6, type: 3}
-  HeartUI2: {fileID: 680337327}
 --- !u!1 &547121777
 GameObject:
   m_ObjectHideFlags: 0
@@ -895,7 +889,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2111735472}
-  m_RootOrder: 14
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &680337325
 GameObject:
@@ -914,7 +908,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &680337326
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1244,7 +1238,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 885961196}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c6e1dba94f4db3c40adf3d47c74ed772, type: 3}
   m_Name: 
@@ -1344,6 +1338,7 @@ MonoBehaviour:
   _speed: 5
   curHealth: 3
   maxHealth: 3
+  Damage: 1
   _maxFuel: 100
   _currentFuel: 0
   _fuelSlider: {fileID: 1411566440}
@@ -1407,8 +1402,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1058228359}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.01, y: -4, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0}
+  m_LocalPosition: {x: -0.073, y: -4.083, z: 0}
+  m_LocalScale: {x: 0.33437896, y: 0.33437896, z: 0}
   m_Children:
   - {fileID: 108786007}
   m_Father: {fileID: 0}
@@ -1650,11 +1645,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1272760064}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.32, y: 6.84, z: 0}
+  m_LocalPosition: {x: -0.35, y: 6.84, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2111735472}
-  m_RootOrder: 17
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1318965949
 GameObject:
@@ -2121,7 +2116,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2111735472}
-  m_RootOrder: 15
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1674237353
 GameObject:
@@ -2241,6 +2236,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Player2
+      objectReference: {fileID: 0}
+    - target: {fileID: 911668267377887120, guid: d38c9eec42f77fe4882debfa4abb7c5e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 911668267377887131, guid: d38c9eec42f77fe4882debfa4abb7c5e,
         type: 3}
@@ -2533,8 +2533,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -128.6, y: 210.1}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: -128.6, y: 210.42}
+  m_SizeDelta: {x: 100, y: 99.35852}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1968358300
 MonoBehaviour:
@@ -2548,12 +2548,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b567709f9953a7840830aedcb509bea0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HeartSprites2:
-  - {fileID: -579870504741873330, guid: 969778929b0148f489beb40e3469e2c6, type: 3}
-  - {fileID: 934018478484794000, guid: 969778929b0148f489beb40e3469e2c6, type: 3}
-  - {fileID: -700189029222056500, guid: 969778929b0148f489beb40e3469e2c6, type: 3}
-  - {fileID: -2749372850734537964, guid: 969778929b0148f489beb40e3469e2c6, type: 3}
-  HeartUI2: {fileID: 680337327}
 --- !u!114 &1968358301
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2761,8 +2755,17 @@ MonoBehaviour:
   - {fileID: 2124744833}
   - {fileID: 1272760064}
   - {fileID: 1318965949}
-  spawnRateF: 3
+  spawnRateF: 5
   nextSpawnF: 0
+  Powerups:
+  - {fileID: 364834844843526815, guid: ea23496228137474a9cef7baf2686504, type: 3}
+  spawnPosition3:
+  - {fileID: 1576943162}
+  - {fileID: 1272760064}
+  - {fileID: 2124744833}
+  - {fileID: 618973630}
+  spawnRateP: 10
+  NextSpawnP: 0
 --- !u!4 &2111735472
 Transform:
   m_ObjectHideFlags: 0
@@ -2788,10 +2791,10 @@ Transform:
   - {fileID: 1091498027}
   - {fileID: 1425109628}
   - {fileID: 1076318807}
-  - {fileID: 618973631}
   - {fileID: 1576943163}
-  - {fileID: 2124744834}
   - {fileID: 1272760065}
+  - {fileID: 2124744834}
+  - {fileID: 618973631}
   - {fileID: 1318965950}
   m_Father: {fileID: 0}
   m_RootOrder: 5

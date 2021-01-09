@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class HUD_p2 : MonoBehaviour
 {
 
-    public Sprite[] HeartSprites2;
+    /*public Sprite[] HeartSprites2;
     public Image HeartUI2;
     private Player2 Player2;
 
@@ -29,6 +29,6 @@ public class HUD_p2 : MonoBehaviour
             heartHUD2.SetActive(true);
         }
 
-    }
+    }*/
     
 }

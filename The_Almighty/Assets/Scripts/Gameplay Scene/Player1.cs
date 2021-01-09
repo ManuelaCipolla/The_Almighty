@@ -7,10 +7,11 @@ using UnityEngine.SceneManagement;
 public class Player1 : MonoBehaviour
 {
     //stats
-    [SerializeField]
-    private float _speed = 5f;
+    public float _speed = 5f;
     public int curHealth;
     public int maxHealth = 3;
+
+    public int  Damage = 1;
 
     //Stats for fuel
     [SerializeField]
@@ -23,6 +24,7 @@ public class Player1 : MonoBehaviour
 
     [SerializeField]
     private float _fuelRecharge;
+    
     
     
     void Start()
@@ -100,7 +102,7 @@ public class Player1 : MonoBehaviour
         if (collision.gameObject.tag == "Enemy")
         {
             Debug.Log("something smart");
-            curHealth --;
+            curHealth = curHealth - Damage ;
         }
         if(collision.gameObject.tag == "Fuel")
         {

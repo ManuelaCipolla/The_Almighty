@@ -38,13 +38,14 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\GameManager.cs" />
      <Compile Include="Assets\Scripts\GameOver Scene\gameOver_Script.cs" />
-     <Compile Include="Assets\Scripts\Gameplay Scene\Enemies\Enemies.cs" />
-     <Compile Include="Assets\Scripts\Gameplay Scene\Enemies\spawnManager.cs" />
-     <Compile Include="Assets\Scripts\Gameplay Scene\Enemies\targetPoint.cs" />
-     <Compile Include="Assets\Scripts\Gameplay Scene\FuelBehaviour.cs" />
      <Compile Include="Assets\Scripts\Gameplay Scene\HUD_p1.cs" />
      <Compile Include="Assets\Scripts\Gameplay Scene\HUD_p2.cs" />
      <Compile Include="Assets\Scripts\Gameplay Scene\Player1.cs" />
+     <Compile Include="Assets\Scripts\Gameplay Scene\Spawning\Enemies.cs" />
+     <Compile Include="Assets\Scripts\Gameplay Scene\Spawning\FuelBehaviour.cs" />
+     <Compile Include="Assets\Scripts\Gameplay Scene\Spawning\PowerUps.cs" />
+     <Compile Include="Assets\Scripts\Gameplay Scene\Spawning\spawnManager.cs" />
+     <Compile Include="Assets\Scripts\Gameplay Scene\Spawning\targetPoint.cs" />
      <Compile Include="Assets\Scripts\Menu Scene\Player1_menu.cs" />
      <Compile Include="Assets\Scripts\PersistentData.cs" />
      <Compile Include="Assets\Scripts\Player2.cs" />
