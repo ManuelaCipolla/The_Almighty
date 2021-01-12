@@ -204,7 +204,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1492345054}
-        m_MethodName: btnNewScene
+        m_MethodName: TaskOnClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -840,7 +840,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1492345053}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8ed82fa59c0e05d48b5f7a0be5a5fab8, type: 3}
+  m_Script: {fileID: 11500000, guid: f2ab3579e16c74b4d8947e8f6d458a29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!4 &1492345055
