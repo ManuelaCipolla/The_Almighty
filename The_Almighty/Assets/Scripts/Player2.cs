@@ -11,11 +11,13 @@ public class Player2 : MonoBehaviour
     public int curHealthP2;
     public int maxHealth = 3;
 
+    public static Player2 player2{get; set;}
     void Start()
     {
         //spawning point
         transform.position = new Vector3(2, -3.5f, 0);
         curHealthP2 = maxHealth;
+        player2 = this;
     }
 
 

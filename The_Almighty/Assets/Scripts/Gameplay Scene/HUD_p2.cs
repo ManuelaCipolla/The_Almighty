@@ -6,10 +6,11 @@ using UnityEngine.UI;
 public class HUD_p2 : MonoBehaviour
 {
 
-    /*public Sprite[] HeartSprites2;
+    public Sprite[] HeartSprites2;
     public Image HeartUI2;
     private Player2 Player2;
 
+[SerializeField]
     private GameObject heartHUD2;
 
     void Start()
@@ -24,11 +25,11 @@ public class HUD_p2 : MonoBehaviour
         HeartUI2.sprite = HeartSprites2[Player2.curHealthP2];
         
         
-        if (GetComponent<GameManager>().player2Active == true)
+        if (GameManager.gameManagerS.player2Active == true)
         {   
             heartHUD2.SetActive(true);
         }
 
-    }*/
+    }
     
 }

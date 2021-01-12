@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -21,8 +21,10 @@ public class GameManager : MonoBehaviour
     public static bool GameIsPaused = false;
     public GameObject pauseUI;
 
+    public static GameManager gameManagerS{get; set;}
     void Start()
     {
+        gameManagerS = this;
         player2Active = PersistentData.data.player2Active;
         Player2.SetActive(false);
         GameScore = 0;

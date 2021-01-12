@@ -41,6 +41,7 @@
      <Compile Include="Assets\Scripts\Gameplay Scene\HUD_p1.cs" />
      <Compile Include="Assets\Scripts\Gameplay Scene\HUD_p2.cs" />
      <Compile Include="Assets\Scripts\Gameplay Scene\Player1.cs" />
+     <Compile Include="Assets\Scripts\Gameplay Scene\SliderP2.cs" />
      <Compile Include="Assets\Scripts\Gameplay Scene\Spawning\Enemies.cs" />
      <Compile Include="Assets\Scripts\Gameplay Scene\Spawning\FuelBehaviour.cs" />
      <Compile Include="Assets\Scripts\Gameplay Scene\Spawning\PowerUps.cs" />
