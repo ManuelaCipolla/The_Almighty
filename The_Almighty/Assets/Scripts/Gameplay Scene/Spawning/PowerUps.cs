@@ -22,6 +22,10 @@ public class PowerUps : MonoBehaviour
     private targetPoint target;
     private float shift;
 
+//pick up player size
+    public GameObject Player1Holder;
+    public Vector3 scaleChange;
+
     void Start()
 {
         //spawning
@@ -41,7 +45,7 @@ public class PowerUps : MonoBehaviour
     }
     void OnTriggerEnter2D (Collider2D other) //Powerups
     {   
-        int randomPowerup = Random.Range(1,4);
+        int randomPowerup = Random.Range(1,6);
         if(other.CompareTag("Player1"))
         {   
             switch(randomPowerup)
@@ -56,6 +60,14 @@ public class PowerUps : MonoBehaviour
 
             case 3:
                 StartCoroutine(PickupSlowness(other));
+            break;
+
+            case 4:
+            StartCoroutine(PickUpSlowTime(other));
+            break;
+
+            case 5:
+            //StartCoroutine(PickUpChangeSize(other));
             break;
             }
         }
@@ -99,6 +111,29 @@ public class PowerUps : MonoBehaviour
         speed._speed *= multiplier;
         Destroy(gameObject);
     }
+
+    IEnumerator PickUpSlowTime(Collider2D Player1)
+    {
+        Debug.Log("Picked up slowTime");
+        Time.timeScale= 0.5f;
+        GetComponent<SpriteRenderer>().enabled = false;
+        GetComponent<Collider2D>().enabled = false;
+        yield return new WaitForSeconds(duration);
+        Time.timeScale= 1;
+        Destroy(gameObject);
+    }
+
+    /*IEnumerator PickUpChangeSize(Collider2D Player1)
+    {
+        scaleChange = new Vector3(-0.01f, -0.01f, -0.01f);
+        Debug.Log("Picked up Change size");
+        Player1Holder.transform.localScale += scaleChange;
+        GetComponent<SpriteRenderer>().enabled = false;
+        GetComponent<Collider2D>().enabled = false;
+        yield return new WaitForSeconds(duration);
+        Player1Holder.transform.localScale -= scaleChange;
+        Destroy(gameObject);
+    }*/
 
     void CheckPosition() //Spawning
     {

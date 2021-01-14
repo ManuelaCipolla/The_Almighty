@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 5384bbe68cb0810408040c9456bad90e, type: 3}
-  m_Color: {r: 0.764151, g: 0, b: 0.168629, a: 1}
+  m_Color: {r: 0.14931642, g: 0.6320754, b: 0.12224099, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -99,8 +99,7 @@ MonoBehaviour:
   multiplier: 2
   duration: 5
   pickupEffect: {fileID: 0}
-  Shield: {fileID: 8902682854006515929, guid: 5f1df4b4fd1dab7429e59fd9cbf9ce2c, type: 3}
-  IsPickupActive: 0
+  instance: {fileID: 0}
   _speed: 5
 --- !u!61 &364834844843526811
 BoxCollider2D:

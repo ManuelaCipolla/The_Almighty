@@ -3,11 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class targetPoint : MonoBehaviour
+
 {
+    public float PositionX = 0f;
+    public float PositionY = 0f;
     // Start is called before the first frame update
     void Start()
     {
-        transform.position = new Vector3(0, 0, 0);
+
+        transform.position = new Vector3(PositionX, PositionY, 0);
     }
 
     // Update is called once per frame
