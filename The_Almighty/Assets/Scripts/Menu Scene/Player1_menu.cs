@@ -9,6 +9,10 @@ public class Player1_menu : MonoBehaviour
     [SerializeField]
     private float _speed = 5f;
 
+    private float HorizontalInput;
+    private float VerticalInput;
+    public SpriteRenderer theSR;
+
     //UI
     private bool _StoreEnter = false;
     private bool _PlayEnter = false;
@@ -26,7 +30,6 @@ public class Player1_menu : MonoBehaviour
     //HighScore
     public Text highScore;
     
-
     void Start()
     {      
         //Spawn position
@@ -52,16 +55,30 @@ public class Player1_menu : MonoBehaviour
             Movement();
         }
 
+        Flip();
         UIButtons();
     }
 
         private void Movement() //Player movement
     {
-        float HorizontalInput = Input.GetAxis("Horizontal1");
-        float VerticalInput = Input.GetAxis("Vertical1");
+        HorizontalInput = Input.GetAxis("Horizontal1");
+        VerticalInput = Input.GetAxis("Vertical1");
 
         Vector3 direction = new Vector3 (HorizontalInput, VerticalInput, 0);
         transform.Translate(direction * _speed * Time.deltaTime);
+    }
+
+    void Flip()
+    {
+        if(!theSR.flipX && HorizontalInput < 0)
+        {
+            theSR.flipX = true;
+        }
+
+        else if(theSR.flipX && HorizontalInput > 0)
+        {
+            theSR.flipX = false;
+        }
     }
 
     private void UIButtons ()
@@ -102,24 +119,36 @@ public class Player1_menu : MonoBehaviour
         {
             _PlayEnter = true;
             Debug.Log("Gameplay works");
+            _SettingEnter = false;
+            _StoreEnter = false;
+            _ExitEnter = false;
         }
 
         if(Collision.CompareTag("SettingButton")) //Setting button
         {
             _SettingEnter = true;
             Debug.Log("Setting works");
+            _PlayEnter = false;
+            _StoreEnter = false;
+            _ExitEnter = false;
         }
 
         if(Collision.CompareTag("StoreButton")) //Store button
         {
             _StoreEnter = true;
             Debug.Log("Store works");
+            _PlayEnter = false;
+            _SettingEnter = false;
+            _ExitEnter = false;
         } 
 
         if(Collision.CompareTag("ExitButton")) //Exit button
         {
             _ExitEnter = true;
             Debug.Log("Exit works");
+            _PlayEnter = false;
+            _SettingEnter = false;
+            _StoreEnter = false;
         }
     } 
 
