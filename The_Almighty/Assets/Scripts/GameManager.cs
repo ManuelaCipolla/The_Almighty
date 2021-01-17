@@ -51,7 +51,7 @@ public class GameManager : MonoBehaviour
 
         //Score
         GameScore += pointPerSeconds * Time.deltaTime;
-        scoreText.text = "SCORE= " + Mathf.Round(GameScore);
+        scoreText.text = "SCORE " + Mathf.Round(GameScore);
         PlayerPrefs.SetFloat("CurrentScore", GameScore);
         HighScore = GameScore;
 
