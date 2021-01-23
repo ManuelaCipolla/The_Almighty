@@ -1,7 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine;
+
 
 public class Player_Test : MonoBehaviour
 {
@@ -47,10 +48,12 @@ public class Player_Test : MonoBehaviour
     }
 
     
-    void Update()
+    void FixedUpdate()
     {
         FuelRate();
-
+    }
+    void Update() 
+    {
         //Boundaries of screen 
         transform.position = new Vector3(transform.position.x, Mathf.Clamp(transform.position.y, -5, 5),0);
         transform.position = new Vector3(Mathf.Clamp(transform.position.x, -3.5f, 3.5f), transform.position.y, 0);
@@ -112,12 +115,15 @@ public class Player_Test : MonoBehaviour
         //better way to make this but we cannot do this
         //Vector2 direction = new Vector2(Input.GetAxis("Horizontal1"), Input.GetAxis("Vertical1"));
 
-        HorizontalInput = Input.GetAxis("Horizontal1");
-        VerticalInput = Input.GetAxis("Vertical1");
-
-        Vector2 direction = new Vector2(HorizontalInput, VerticalInput);
+        HorizontalInput = Input.GetAxis("Horizontal1") ;
+        VerticalInput = Input.GetAxis("Vertical1") ;
+        
+        rb.AddForce(new Vector2(HorizontalInput, VerticalInput)* _speed ,ForceMode2D.Force);
+        
+        
+        /*Vector2 direction = new Vector2(HorizontalInput, VerticalInput);
         Vector2 moveVelocity = direction.normalized * _speed;
-        rb.MovePosition(rb.position + moveVelocity * Time.deltaTime);
+        rb.MovePosition(rb.position + moveVelocity * Time.deltaTime);*/
 
         //fuel
         if(HorizontalInput != 0 || VerticalInput != 0)
