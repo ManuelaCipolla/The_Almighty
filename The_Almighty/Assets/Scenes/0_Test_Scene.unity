@@ -4969,7 +4969,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 677dbd5d1b582254094779b651ef0527, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 9
+  _speed: 11
   curHealth: 0
   maxHealth: 3
   Damage: 1
@@ -4996,9 +4996,9 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 3
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0.01
+  m_LinearDrag: 1.1
+  m_AngularDrag: 0
+  m_GravityScale: 0.05
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1

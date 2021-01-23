@@ -118,7 +118,7 @@ public class Player_Test : MonoBehaviour
         HorizontalInput = Input.GetAxis("Horizontal1") ;
         VerticalInput = Input.GetAxis("Vertical1") ;
         
-        rb.AddForce(new Vector2(HorizontalInput, VerticalInput)* _speed ,ForceMode2D.Force);
+        rb.AddRelativeForce(new Vector2(HorizontalInput, VerticalInput)* _speed ,ForceMode2D.Force);
         
         
         /*Vector2 direction = new Vector2(HorizontalInput, VerticalInput);
