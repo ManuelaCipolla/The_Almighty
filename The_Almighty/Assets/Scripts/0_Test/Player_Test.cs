@@ -19,6 +19,7 @@ public class Player_Test : MonoBehaviour
     public float _currentFuel;
     [SerializeField]
     private Slider _fuelSlider;
+
     [SerializeField]
     private float _fuelBurnRate = 20f;
 
@@ -30,15 +31,28 @@ public class Player_Test : MonoBehaviour
     public float VerticalInput;
     public SpriteRenderer theSR;
     public Animator anim;
+
+    public Animator camShake;
     public ParticleSystem fire;
 
     private bool facingRight = true;
     
     private Rigidbody2D rb;
+
+    [Header("Fade on hit")]
+    public Color flashColor;
+    public Color regularColor;
+    public float flashDuration;
+    public int numberOfFlashes;
+    public Collider2D triggerCollider;
+    public SpriteRenderer playerSprite;
+
     
     void Start()
     {
+        
         rb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
         //spawning point for p1
         transform.position = new Vector3(-2, -3.5f, 0);
         //health
@@ -54,6 +68,7 @@ public class Player_Test : MonoBehaviour
     }
     void Update() 
     {
+
         //Boundaries of screen 
         transform.position = new Vector3(transform.position.x, Mathf.Clamp(transform.position.y, -5, 5),0);
         transform.position = new Vector3(Mathf.Clamp(transform.position.x, -3.5f, 3.5f), transform.position.y, 0);
@@ -119,8 +134,7 @@ public class Player_Test : MonoBehaviour
         VerticalInput = Input.GetAxis("Vertical1") ;
         
         rb.AddRelativeForce(new Vector2(HorizontalInput, VerticalInput)* _speed ,ForceMode2D.Force);
-        
-        
+
         /*Vector2 direction = new Vector2(HorizontalInput, VerticalInput);
         Vector2 moveVelocity = direction.normalized * _speed;
         rb.MovePosition(rb.position + moveVelocity * Time.deltaTime);*/
@@ -130,7 +144,7 @@ public class Player_Test : MonoBehaviour
         {
             _currentFuel -= _fuelBurnRate * Time.deltaTime;
         }
-        CreateFire();
+        CreateJetpackParticle();
     }
 
 
@@ -140,7 +154,12 @@ public class Player_Test : MonoBehaviour
         if (collision.gameObject.tag == "Enemy")
         {
             Debug.Log("something smart");
-            curHealth = curHealth - Damage ;
+            curHealth = curHealth - Damage;
+            camShake.SetTrigger("isShake");
+            StartCoroutine(playerHitRoutine());
+            //anim.SetBool("isDmgHit",true);
+
+            
         }
         if(collision.gameObject.tag == "Fuel")
         {
@@ -148,6 +167,20 @@ public class Player_Test : MonoBehaviour
             _currentFuel = _currentFuel + _fuelRecharge;
             _currentFuel = _maxFuel;
         }
+    }
+    IEnumerator playerHitRoutine ()
+    {
+        int temp = 0;
+        triggerCollider.enabled = false;
+        while(temp < numberOfFlashes)
+        {
+            playerSprite.color = flashColor;
+            yield return new WaitForSeconds(flashDuration);
+            playerSprite.color = regularColor;
+            yield return new WaitForSeconds(flashDuration);
+            temp++;
+        }
+        triggerCollider.enabled = true;
     }
 
         void Death() //literal death (in game and real life wowa)
@@ -179,7 +212,7 @@ public class Player_Test : MonoBehaviour
             transform.Rotate(0, 180, 0);
         }
     }
-    void CreateFire()
+    void CreateJetpackParticle()
     {
         fire.Play();
     }
