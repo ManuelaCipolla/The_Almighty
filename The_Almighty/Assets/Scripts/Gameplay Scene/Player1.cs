@@ -24,11 +24,14 @@ public class Player1 : MonoBehaviour
 
     [SerializeField]
     private float _fuelRecharge;
+
+    private Rigidbody2D rb;
     
     
     
     void Start()
     {
+        rb = GetComponent<Rigidbody2D>();
         //spawning point for p1
         transform.position = new Vector3(-2, -3.5f, 0);
         //health
@@ -38,19 +41,21 @@ public class Player1 : MonoBehaviour
     }
 
     
-    void Update()
+    void FixedUpdate()
     {
         FuelRate();
+        //Fuel
+        _fuelSlider.value = _currentFuel / _maxFuel;
+        
+    }
 
+    void Update()
+    {
         //Boundaries of screen 
         transform.position = new Vector3(transform.position.x, Mathf.Clamp(transform.position.y, -5, 5),0);
         transform.position = new Vector3(Mathf.Clamp(transform.position.x, -3.5f, 3.5f), transform.position.y, 0);
 
         Health();
-
-        //Fuel
-        _fuelSlider.value = _currentFuel / _maxFuel;
-        
     }
 
     void Health()
@@ -85,8 +90,7 @@ public class Player1 : MonoBehaviour
         float HorizontalInput = Input.GetAxis("Horizontal1");
         float VerticalInput = Input.GetAxis("Vertical1");
 
-        Vector3 direction = new Vector3 (HorizontalInput, VerticalInput, 0);
-        transform.Translate(direction * _speed * Time.deltaTime);
+        rb.AddRelativeForce(new Vector2(HorizontalInput, VerticalInput)* _speed ,ForceMode2D.Force);
 
         //fuel
         if(HorizontalInput != 0 || VerticalInput != 0)
