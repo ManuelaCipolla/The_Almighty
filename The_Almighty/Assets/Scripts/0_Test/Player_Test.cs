@@ -168,7 +168,7 @@ public class Player_Test : MonoBehaviour
             _currentFuel = _maxFuel;
         }
     }
-    IEnumerator playerHitRoutine () //damage anim 
+    IEnumerator playerHitRoutine ()
     {
         int temp = 0;
         triggerCollider.enabled = false;

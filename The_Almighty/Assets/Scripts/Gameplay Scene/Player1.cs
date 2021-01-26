@@ -6,9 +6,6 @@ using UnityEngine.SceneManagement;
 
 public class Player1 : MonoBehaviour
 {
-    //Animation
-    public Animator camShake;
-
     //stats
     public float _speed = 5f;
     public int curHealth;
@@ -110,7 +107,6 @@ public class Player1 : MonoBehaviour
         {
             Debug.Log("something smart");
             curHealth = curHealth - Damage ;
-            camShake.SetTrigger("isShake");
         }
         if(collision.gameObject.tag == "Fuel")
         {
