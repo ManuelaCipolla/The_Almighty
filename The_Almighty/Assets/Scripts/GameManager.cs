@@ -7,9 +7,9 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     //p2 persistent data
-    public GameObject Player2;
+    /*public GameObject Player2;
     public bool player2Active;
-    public GameObject P2text;
+    public GameObject P2text;*/
 
     //Score
     public float GameScore = 0f;
@@ -25,15 +25,15 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         gameManagerS = this;
-        player2Active = PersistentData.data.player2Active;
-        Player2.SetActive(false);
+        //player2Active = PersistentData.data.player2Active;
+        //Player2.SetActive(false);
         GameScore = 0;
     }
 
     void Update()
     {
         //p2
-        if(!player2Active)
+        /*if(!player2Active)
         {
             if(Input.GetKeyDown(KeyCode.P))
             {
@@ -47,7 +47,7 @@ public class GameManager : MonoBehaviour
         else if(player2Active)
         {
             Player2.SetActive(true);
-        }
+        }*/
 
         //Score
         GameScore += pointPerSeconds * Time.deltaTime;
@@ -66,10 +66,10 @@ public class GameManager : MonoBehaviour
     }
 
     //persistent data
-    public void SavePlayer()
+    /*public void SavePlayer()
     {
         PersistentData.data.player2Active = player2Active;
-    }
+    }*/
 
     //PauseMenu
     void PauseMenu()

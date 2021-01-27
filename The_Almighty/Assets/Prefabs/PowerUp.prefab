@@ -101,6 +101,8 @@ MonoBehaviour:
   pickupEffect: {fileID: 0}
   instance: {fileID: 0}
   _speed: 5
+  Player1Holder: {fileID: 0}
+  scaleChange: {x: 0, y: 0, z: 0}
 --- !u!61 &364834844843526811
 BoxCollider2D:
   m_ObjectHideFlags: 0

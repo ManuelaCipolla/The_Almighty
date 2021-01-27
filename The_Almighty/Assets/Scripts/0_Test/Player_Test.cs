@@ -170,16 +170,26 @@ public class Player_Test : MonoBehaviour
     }
     IEnumerator playerHitRoutine ()
     {
-        int temp = 0;
+        // int temp = 0;
         triggerCollider.enabled = false;
-        while(temp < numberOfFlashes)
+        // while(temp < numberOfFlashes)
+        // {
+        //     playerSprite.color = flashColor;
+        //     yield return new WaitForSeconds(flashDuration);
+        //     playerSprite.color = regularColor;
+        //     yield return new WaitForSeconds(flashDuration);
+        //     temp++;
+        // }
+        for (int i = 0; i < numberOfFlashes; i++)
         {
-            playerSprite.color = flashColor;
+            anim.enabled = false;
+            theSR.color = new Color(1f, 0.5f, 0.5f, 0.5f);
             yield return new WaitForSeconds(flashDuration);
-            playerSprite.color = regularColor;
+            theSR.color = new Color(1f, 1f, 1f, 1f);
+            anim.enabled = true;
             yield return new WaitForSeconds(flashDuration);
-            temp++;
         }
+        theSR.color = new Color(1f, 1f, 1f, 1f);
         triggerCollider.enabled = true;
     }
 

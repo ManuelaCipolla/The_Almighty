@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class Player1 : MonoBehaviour
 {
     //stats
+    [Header("Stats")]
     public float _speed = 5f;
     public int curHealth;
     public int maxHealth = 3;
@@ -14,6 +15,7 @@ public class Player1 : MonoBehaviour
     public int  Damage = 1;
 
     //Stats for fuel
+    [Header("Fuel")]
     [SerializeField]
     private float _maxFuel = 100f;
     public float _currentFuel;
@@ -25,15 +27,32 @@ public class Player1 : MonoBehaviour
     [SerializeField]
     private float _fuelRecharge;
 
+    //animation
+        [Header("Animation")]
+    public float HorizontalInput;
+    public float VerticalInput;
+    public SpriteRenderer theSR;
+    public Animator anim;
+
+//camShake
+    public Animator camShake;
+
+    //flip
+    private bool facingRight = true;
     private Rigidbody2D rb;
     
-    
-    
+    //on hit
+    [Header("Fade on hit")]
+    public float flashDuration;
+    public int numberOfFlashes;
+    public Collider2D triggerCollider;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
         //spawning point for p1
-        transform.position = new Vector3(-2, -3.5f, 0);
+        transform.position = new Vector3(-0.07f, -4f, 0);
         //health
         curHealth = maxHealth;
         //fuel
@@ -44,9 +63,6 @@ public class Player1 : MonoBehaviour
     void FixedUpdate()
     {
         FuelRate();
-        //Fuel
-        _fuelSlider.value = _currentFuel / _maxFuel;
-        
     }
 
     void Update()
@@ -56,6 +72,10 @@ public class Player1 : MonoBehaviour
         transform.position = new Vector3(Mathf.Clamp(transform.position.x, -3.5f, 3.5f), transform.position.y, 0);
 
         Health();
+
+        _fuelSlider.value = _currentFuel / _maxFuel;
+
+        Flip();
     }
 
     void Health()
@@ -84,12 +104,12 @@ public class Player1 : MonoBehaviour
             Death();
         }
     }
-    private void Movement() //Player movement
-    {
-        
-        float HorizontalInput = Input.GetAxis("Horizontal1");
-        float VerticalInput = Input.GetAxis("Vertical1");
 
+    private void Movement()
+    {
+        HorizontalInput = Input.GetAxis("Horizontal1") ;
+        VerticalInput = Input.GetAxis("Vertical1") ;
+        
         rb.AddRelativeForce(new Vector2(HorizontalInput, VerticalInput)* _speed ,ForceMode2D.Force);
 
         //fuel
@@ -107,6 +127,8 @@ public class Player1 : MonoBehaviour
         {
             Debug.Log("something smart");
             curHealth = curHealth - Damage ;
+            camShake.SetTrigger("isShake");
+            StartCoroutine(playerHitRoutine());
         }
         if(collision.gameObject.tag == "Fuel")
         {
@@ -116,11 +138,57 @@ public class Player1 : MonoBehaviour
         }
     }
 
+    IEnumerator playerHitRoutine ()
+    {
+        triggerCollider.enabled = false;
+
+        for (int i = 0; i < numberOfFlashes; i++)
+        {
+            anim.enabled = false;
+            theSR.color = new Color(1f, 0.5f, 0.5f, 0.5f);
+            yield return new WaitForSeconds(flashDuration);
+            theSR.color = new Color(1f, 1f, 1f, 1f);
+            anim.enabled = true;
+            yield return new WaitForSeconds(flashDuration);
+        }
+        theSR.color = new Color(1f, 1f, 1f, 1f);
+        triggerCollider.enabled = true;
+    }
+
+    /*public IEnumerator PlayerShield()
+    {
+        Debug.Log("Picked up Shield!");
+        Damage= 0;
+        for (int i = 0; i < numberOfFlashes; i++)
+        {
+            anim.enabled = false;
+            theSR.color = new Color(0.5f, 0.5f, 1f, 1f);
+            yield return new WaitForSeconds(flashDuration);
+            theSR.color = new Color(1f, 1f, 1f, 1f);
+            anim.enabled = true;
+            yield return new WaitForSeconds(flashDuration);
+        }
+        theSR.color = new Color(1f, 1f, 1f, 1f);
+        Damage = 1;
+        Destroy(gameObject.GetComponent<PowerUps>());
+    }*/
+
+
         void Death() //literal death (in game and real life wowa)
     {
         Debug.Log("YOU DEAD FUCKER");
         Destroy(gameObject, 1);
         SceneManager.LoadScene("Game Over");
         
+    }
+
+    void Flip()
+    {
+        if((HorizontalInput < 0 && facingRight) || (HorizontalInput > 0 && !facingRight))
+        {
+            facingRight =!facingRight;
+
+            transform.Rotate(0, 180, 0);
+        }
     }
 }
