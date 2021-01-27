@@ -2573,7 +2573,7 @@ MonoBehaviour:
   - {fileID: 1480752072}
   - {fileID: 1091498026}
   - {fileID: 1425109627}
-  spawnRate: 0.85
+  spawnRate: 0.75
   nextSpawn: 0
   fuel:
   - {fileID: 8013857900451600608, guid: 4a50ff84d4c9dc8439294ec1bdd62bdf, type: 3}
