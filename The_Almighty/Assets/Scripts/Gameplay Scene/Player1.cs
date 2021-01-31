@@ -134,7 +134,11 @@ public class Player1 : MonoBehaviour
         {
             Debug.Log("Fuel up baby");
             _currentFuel = _currentFuel + _fuelRecharge;
-            _currentFuel = _maxFuel;
+            
+            if(_currentFuel > _maxFuel)
+            {
+                _currentFuel = _maxFuel;
+            }
         }
     }
 

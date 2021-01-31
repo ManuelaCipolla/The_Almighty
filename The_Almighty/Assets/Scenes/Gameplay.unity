@@ -1276,7 +1276,7 @@ MonoBehaviour:
   _currentFuel: 0
   _fuelSlider: {fileID: 1411566440}
   _fuelBurnRate: 5
-  _fuelRecharge: 20
+  _fuelRecharge: 30
   HorizontalInput: 0
   VerticalInput: 0
   theSR: {fileID: 1058228361}
