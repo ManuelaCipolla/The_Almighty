@@ -42,6 +42,7 @@
      <Compile Include="Assets\Scripts\GameOver Scene\gameOver_Script.cs" />
      <Compile Include="Assets\Scripts\Gameplay Scene\HUD_p1.cs" />
      <Compile Include="Assets\Scripts\Gameplay Scene\Player1.cs" />
+     <Compile Include="Assets\Scripts\Gameplay Scene\Spawning\CoinsBehaviour.cs" />
      <Compile Include="Assets\Scripts\Gameplay Scene\Spawning\Enemies.cs" />
      <Compile Include="Assets\Scripts\Gameplay Scene\Spawning\FuelBehaviour.cs" />
      <Compile Include="Assets\Scripts\Gameplay Scene\Spawning\PowerUps.cs" />

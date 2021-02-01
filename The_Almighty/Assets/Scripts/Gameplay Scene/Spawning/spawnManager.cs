@@ -29,11 +29,20 @@ public GameObject[] Powerups;
 public GameObject[] spawnPosition3;
 [SerializeField]
 private float spawnRateP, NextSpawnP;
+
+//Coins
+public GameObject[] Coins;
+public GameObject[] spawnPosition4;
+[SerializeField]
+private float spawnRateC, NextSpawnC;
+
+
     void Update()
     {
         EnemiesNextSpawn();
         FuelNextSpawn();
         PowerupsNextSpawn();
+        CoinsNextSpawn();
     }
 
     void EnemiesNextSpawn()
@@ -72,6 +81,18 @@ private float spawnRateP, NextSpawnP;
         }
         
     }
+
+    void CoinsNextSpawn()
+    {
+        if(NextSpawnC > 0)
+        {
+            NextSpawnC -= Time.deltaTime;
+        }
+        if(NextSpawnC <= 0)
+        {
+            SpawnCoins();
+        }
+    }
     
     private void SpawnEnemies()
     {
@@ -95,5 +116,13 @@ private float spawnRateP, NextSpawnP;
         Vector2 position3 = spawnPosition3[Random.Range(0,spawnPosition3.Length)].transform.position;
         GameObject PowerupsClone = Instantiate (Powerups[Random.Range(0, fuel.Length)],new Vector2(position3.x, position3.y), transform.rotation);
         PowerupsClone.SetActive(true);
+    }
+
+    private void SpawnCoins()
+    {
+        NextSpawnC = spawnRateC;
+        Vector2 position4 = spawnPosition4[Random.Range(0,spawnPosition3.Length)].transform.position;
+        GameObject CoinsClone = Instantiate (Coins[Random.Range(0, fuel.Length)],new Vector2(position4.x, position4.y), transform.rotation);
+        CoinsClone.SetActive(true);
     }
 }

@@ -43,6 +43,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e2c4aa888869c54390602b5470434a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player2: {fileID: 911668267377887120, guid: d38c9eec42f77fe4882debfa4abb7c5e, type: 3}
-  player2Active: 0
-  P2text: {fileID: 0}
+  GameScore: 0
+  scoreText: {fileID: 0}
+  HighScore: 0
+  pointPerSeconds: 5
+  pauseUI: {fileID: 0}

@@ -47,8 +47,14 @@ public class Player1 : MonoBehaviour
     public int numberOfFlashes;
     public Collider2D triggerCollider;
 
+        //Coins Score
+    public int coinScore = 0;
+    public Text CoinText;
+    public int highCoin;
+    public int coins;
     void Start()
     {
+        coinScore = 0;
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         //spawning point for p1
@@ -68,14 +74,15 @@ public class Player1 : MonoBehaviour
     void Update()
     {
         //Boundaries of screen 
-        transform.position = new Vector3(transform.position.x, Mathf.Clamp(transform.position.y, -5, 5),0);
-        transform.position = new Vector3(Mathf.Clamp(transform.position.x, -3.5f, 3.5f), transform.position.y, 0);
+        transform.position = new Vector3(transform.position.x, Mathf.Clamp(transform.position.y, -4.83f, 4.83f),0);
+        transform.position = new Vector3(Mathf.Clamp(transform.position.x, -3.57f, 3.57f), transform.position.y, 0);
 
         Health();
 
         _fuelSlider.value = _currentFuel / _maxFuel;
 
         Flip();
+
     }
 
     void Health()
@@ -140,6 +147,13 @@ public class Player1 : MonoBehaviour
                 _currentFuel = _maxFuel;
             }
         }
+
+        if(collision.gameObject.tag == "Coins")
+        {
+            coinScore += 1;
+            coins = PlayerPrefs.GetInt("CurrentCoins", coinScore);
+            CoinText.text = "COIN " + coinScore;
+        }
     }
 
     IEnumerator playerHitRoutine ()
@@ -183,7 +197,9 @@ public class Player1 : MonoBehaviour
         Debug.Log("YOU DEAD FUCKER");
         Destroy(gameObject, 1);
         SceneManager.LoadScene("Game Over");
-        
+
+        PlayerPrefs.SetInt("CurrentCoins", coins + coinScore);
+        PlayerPrefs.Save();
     }
 
     void Flip()

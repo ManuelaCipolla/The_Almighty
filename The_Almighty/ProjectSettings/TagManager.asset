@@ -12,6 +12,7 @@ TagManager:
   - SettingButton
   - ExitButton
   - Fuel
+  - Coins
   layers:
   - Default
   - TransparentFX

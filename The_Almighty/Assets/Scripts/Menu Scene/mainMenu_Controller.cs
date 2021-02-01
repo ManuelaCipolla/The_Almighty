@@ -31,6 +31,8 @@ public class mainMenu_Controller : MonoBehaviour
 
     //HighScore
     public Text highScore;
+    public Text Coins;
+
     [SerializeField]
     private GameObject _tutorialText;
     
@@ -64,6 +66,8 @@ public class mainMenu_Controller : MonoBehaviour
         transform.position = new Vector3(Mathf.Clamp(transform.position.x, -3.5f, 3.5f), transform.position.y, 0);
         
         Flip();
+
+        Coins.text = "COINS " + PlayerPrefs.GetInt("CurrentCoins");
     }
 
         void Movement()//Player movement
