@@ -2159,7 +2159,7 @@ GameObject:
   m_Layer: 0
   m_Name: spawnPoint (1)
   m_TagString: Untagged
-  m_Icon: {fileID: 4422084297763085224, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -2218,6 +2218,7 @@ GameObject:
   - component: {fileID: 1058228362}
   - component: {fileID: 1058228361}
   - component: {fileID: 1058228360}
+  - component: {fileID: 1058228366}
   - component: {fileID: 1058228364}
   - component: {fileID: 1058228363}
   - component: {fileID: 1058228365}
@@ -2383,6 +2384,27 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1058228366
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1058228359}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9581be4263f5b1a449ab280e0b2263e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteRenderer: {fileID: 1058228361}
+  MageSprite:
+  - {fileID: -1972476265098658286, guid: 55ed0b069d2becf4695ecabfbd1791d4, type: 3}
+  - {fileID: -3761395888582659726, guid: 55ed0b069d2becf4695ecabfbd1791d4, type: 3}
+  - {fileID: 427745613032383605, guid: 55ed0b069d2becf4695ecabfbd1791d4, type: 3}
+  - {fileID: -8676876252155764364, guid: 55ed0b069d2becf4695ecabfbd1791d4, type: 3}
+  - {fileID: 445351586458147288, guid: 55ed0b069d2becf4695ecabfbd1791d4, type: 3}
+  MageAnimator: {fileID: 1058228365}
+  MagicianPlayer: {fileID: 0}
 --- !u!1 &1076318806
 GameObject:
   m_ObjectHideFlags: 0
@@ -3677,7 +3699,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1968358299}
   - component: {fileID: 1968358301}
-  - component: {fileID: 1968358300}
   m_Layer: 5
   m_Name: HUD
   m_TagString: Untagged
@@ -3706,18 +3727,6 @@ RectTransform:
   m_AnchoredPosition: {x: -256.8, y: 423.8}
   m_SizeDelta: {x: 181.25786, y: 179.71078}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1968358300
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1968358298}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b567709f9953a7840830aedcb509bea0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1968358301
 MonoBehaviour:
   m_ObjectHideFlags: 0

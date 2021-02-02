@@ -48,6 +48,10 @@ public class GameManager : MonoBehaviour
         {
             Player2.SetActive(true);
         }*/
+        if(PlayerPrefs.GetInt("playerActive") == 2)
+        {
+            
+        }
 
         //Score
         GameScore += pointPerSeconds * Time.deltaTime;
