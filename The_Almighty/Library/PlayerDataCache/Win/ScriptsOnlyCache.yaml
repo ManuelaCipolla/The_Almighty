@@ -1,19 +1,20 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
+    - CoinsBehaviour
     - Enemies
     - FuelBehaviour
     - GameManager
     - HUD_p1
-    - HUD_p2
+    - MainMenu_Buttons
     - Player1
     - Player1_menu
-    - Player2
     - PowerUps
     - StoreController
     - TitleScreen
     - Title_Screen_Rotate
     - gameOver_Script
+    - gameplay_controller
     - lockRot_Slider
     - mainMenu_Controller
     - spawnManager
@@ -43,8 +44,13 @@ ScriptsOnlyBuild:
     - UnityEngine.EventSystems.StandaloneInputModule
     - UnityEngine.UI.Button
     - UnityEngine.UI.CanvasScaler
+    - UnityEngine.UI.ContentSizeFitter
     - UnityEngine.UI.GraphicRaycaster
+    - UnityEngine.UI.GridLayoutGroup
     - UnityEngine.UI.Image
+    - UnityEngine.UI.Mask
+    - UnityEngine.UI.ScrollRect
+    - UnityEngine.UI.Scrollbar
     - UnityEngine.UI.Slider
     - UnityEngine.UI.Text
   sceneClasses:
@@ -78,17 +84,17 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11612}
     - Class: 114
-      Script: {instanceID: 12278}
+      Script: {instanceID: 12282}
     - Class: 114
-      Script: {instanceID: 12968}
+      Script: {instanceID: 12974}
     - Class: 114
-      Script: {instanceID: 12990}
+      Script: {instanceID: 12996}
     - Class: 114
-      Script: {instanceID: 13000}
+      Script: {instanceID: 13006}
     - Class: 114
-      Script: {instanceID: 13762}
+      Script: {instanceID: 13768}
     - Class: 114
-      Script: {instanceID: 14386}
+      Script: {instanceID: 14392}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -122,6 +128,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 50
       Script: {instanceID: 0}
+    - Class: 58
+      Script: {instanceID: 0}
     - Class: 60
       Script: {instanceID: 0}
     - Class: 61
@@ -145,35 +153,37 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11612}
     - Class: 114
-      Script: {instanceID: 12278}
+      Script: {instanceID: 11710}
     - Class: 114
-      Script: {instanceID: 12560}
+      Script: {instanceID: 12282}
     - Class: 114
-      Script: {instanceID: 12750}
+      Script: {instanceID: 12564}
     - Class: 114
-      Script: {instanceID: 12808}
+      Script: {instanceID: 12688}
     - Class: 114
-      Script: {instanceID: 12828}
+      Script: {instanceID: 12756}
     - Class: 114
-      Script: {instanceID: 12990}
+      Script: {instanceID: 12814}
     - Class: 114
-      Script: {instanceID: 13000}
+      Script: {instanceID: 12834}
     - Class: 114
-      Script: {instanceID: 13216}
+      Script: {instanceID: 12996}
     - Class: 114
-      Script: {instanceID: 13762}
+      Script: {instanceID: 13006}
     - Class: 114
-      Script: {instanceID: 14182}
+      Script: {instanceID: 13222}
     - Class: 114
-      Script: {instanceID: 14216}
+      Script: {instanceID: 13768}
     - Class: 114
-      Script: {instanceID: 14386}
+      Script: {instanceID: 14188}
     - Class: 114
-      Script: {instanceID: 14420}
+      Script: {instanceID: 14222}
     - Class: 114
-      Script: {instanceID: 14430}
+      Script: {instanceID: 14392}
     - Class: 114
-      Script: {instanceID: 14432}
+      Script: {instanceID: 14426}
+    - Class: 114
+      Script: {instanceID: 14436}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -222,27 +232,27 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11266}
     - Class: 114
-      Script: {instanceID: 11360}
-    - Class: 114
       Script: {instanceID: 11558}
     - Class: 114
       Script: {instanceID: 11612}
     - Class: 114
-      Script: {instanceID: 12278}
+      Script: {instanceID: 11638}
     - Class: 114
-      Script: {instanceID: 12990}
+      Script: {instanceID: 12282}
     - Class: 114
-      Script: {instanceID: 13000}
+      Script: {instanceID: 12996}
     - Class: 114
-      Script: {instanceID: 13762}
+      Script: {instanceID: 13006}
     - Class: 114
-      Script: {instanceID: 13950}
+      Script: {instanceID: 13768}
     - Class: 114
-      Script: {instanceID: 14386}
+      Script: {instanceID: 13956}
     - Class: 114
-      Script: {instanceID: 14430}
+      Script: {instanceID: 14392}
     - Class: 114
-      Script: {instanceID: 14444}
+      Script: {instanceID: 14436}
+    - Class: 114
+      Script: {instanceID: 14450}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -283,17 +293,27 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11558}
     - Class: 114
+      Script: {instanceID: 11562}
+    - Class: 114
       Script: {instanceID: 11612}
     - Class: 114
-      Script: {instanceID: 12278}
+      Script: {instanceID: 11714}
     - Class: 114
-      Script: {instanceID: 12990}
+      Script: {instanceID: 11790}
     - Class: 114
-      Script: {instanceID: 13148}
+      Script: {instanceID: 12110}
     - Class: 114
-      Script: {instanceID: 13762}
+      Script: {instanceID: 12282}
     - Class: 114
-      Script: {instanceID: 14386}
+      Script: {instanceID: 12634}
+    - Class: 114
+      Script: {instanceID: 12996}
+    - Class: 114
+      Script: {instanceID: 13154}
+    - Class: 114
+      Script: {instanceID: 13768}
+    - Class: 114
+      Script: {instanceID: 14392}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -340,13 +360,13 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11612}
     - Class: 114
-      Script: {instanceID: 12278}
+      Script: {instanceID: 12282}
     - Class: 114
-      Script: {instanceID: 13124}
+      Script: {instanceID: 13130}
     - Class: 114
-      Script: {instanceID: 13762}
+      Script: {instanceID: 13768}
     - Class: 114
-      Script: {instanceID: 14386}
+      Script: {instanceID: 14392}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -464,6 +484,12 @@ ScriptsOnlyBuild:
     className: TestResultRendererCallback
   - hash:
       serializedVersion: 2
+      Hash: 14334a117a34d964e6c1cae245e4c86f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: MainMenu_Buttons
+  - hash:
+      serializedVersion: 2
       Hash: 1d845b2535654b2525956159b2714d86
     assemblyName: Unity.2D.SpriteShape.Runtime.dll
     namespaceName: UnityEngine.U2D
@@ -474,6 +500,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TMP_InputField
+  - hash:
+      serializedVersion: 2
+      Hash: 1afd5eb08e2098d8e2b822a10d60d75b
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: gameplay_controller
   - hash:
       serializedVersion: 2
       Hash: 7ab0e790220bdca831fdd886b339039d
@@ -632,6 +664,12 @@ ScriptsOnlyBuild:
     className: SignalTrack
   - hash:
       serializedVersion: 2
+      Hash: 4a4d3b28cd5c0cdf182bf9360fc5f89d
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: CoinsBehaviour
+  - hash:
+      serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Unity.2D.Animation.Runtime.dll
     namespaceName: UnityEngine.U2D.Animation
@@ -650,7 +688,7 @@ ScriptsOnlyBuild:
     className: TMP_SpriteAnimator
   - hash:
       serializedVersion: 2
-      Hash: 7acccafa25ff48b493b5d6eddc3a4b28
+      Hash: c976b437f0afd66d890b3defe4cd1c15
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: spawnManager
@@ -710,7 +748,7 @@ ScriptsOnlyBuild:
     className: VerticalLayoutGroup
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+      Hash: 26165675bbb4c8f9cd7a6bb1167b59ab
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: StoreController
@@ -938,7 +976,7 @@ ScriptsOnlyBuild:
     className: SignalEmitter
   - hash:
       serializedVersion: 2
-      Hash: c95769ee441fab8d664ecc2601322afb
+      Hash: 4d787f4af6f273b5181d9b9fa7427d9b
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Player1
@@ -956,7 +994,7 @@ ScriptsOnlyBuild:
     className: HUD_p2
   - hash:
       serializedVersion: 2
-      Hash: 6f441cdb5be369a317cd48996f926586
+      Hash: 46785f810489444f9f111b68232d88b6
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: mainMenu_Controller
@@ -980,4 +1018,4 @@ ScriptsOnlyBuild:
   - Assets/Scenes/Store.unity
   - Assets/Scenes/Game Over.unity
   playerPath: C:/Users/computer/Documents/A_MONDO/SCUOLA/Lvl5.2_1/The Almighty/Builds/FlyingAntics
-    1.1/Flying Antics.exe
+    1.4/Flying Antics.exe

@@ -5,9 +5,29 @@ using UnityEngine.UI;
 public class gameplay_controller : MonoBehaviour
 {
 public SpriteRenderer spriteRenderer;
-public Sprite[] MageSprite;
 public Animator Animator;
-public GameObject MagicianPlayer;
+
+// BACKGROUND HOLDER //
+[Header("Backgrounds")]
+public GameObject item1;
+public GameObject item2;
+public GameObject item3;
+public GameObject item4;
+public GameObject item5;
+public GameObject item6;
+public GameObject item7;
+public GameObject item8;
+public GameObject item9;
+public GameObject item10;
+public GameObject item11;
+public GameObject item12;
+public GameObject item13;
+public GameObject item14;
+public GameObject item15;
+public GameObject item16;
+public GameObject item17;
+public GameObject item18;
+
 
 
     void Start()
@@ -16,6 +36,7 @@ public GameObject MagicianPlayer;
         spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
 
         int playerActive = PlayerPrefs.GetInt("playerActive");
+        int BackgroundActive = PlayerPrefs.GetInt("BackgroundValue");
 
         //Magician
         if(playerActive == 1)
@@ -44,15 +65,95 @@ public GameObject MagicianPlayer;
             Animator.SetBool("BearActive", false);
             Animator.SetBool("MageActive", false);
         }
-    }
-    void Update()
-    {
 
-    }
+        if(BackgroundActive == 1)
+        {
+            item1.SetActive(true);
+        }
 
-    /*void ChangeSpriteMage()
-    {
-        spriteRenderer.sprite = MageSprite[5];
-        //MageAnimator.runtimeAnimatorController = Resources.Load<RuntimeAnimatorController>("Animation/SPRITE SHEET 2_Magitian_0");
-    }*/
+        if(BackgroundActive == 2)
+        {
+            item2.SetActive(true);
+        }
+
+        if(BackgroundActive == 3)
+        {
+            item3.SetActive(true);
+        }
+
+        if(BackgroundActive == 4)
+        {
+            item4.SetActive(true);
+        }
+
+        if(BackgroundActive == 5)
+        {
+            item5.SetActive(true);
+        }
+
+        if(BackgroundActive == 6)
+        {
+            item6.SetActive(true);
+        }
+
+        if(BackgroundActive == 7)
+        {
+            item7.SetActive(true);
+        }
+
+        if(BackgroundActive == 8)
+        {
+            item8.SetActive(true);
+        }
+
+        if(BackgroundActive == 9)
+        {
+            item9.SetActive(true);
+        }
+
+        if(BackgroundActive == 10)
+        {
+            item10.SetActive(true);
+        }
+
+        if(BackgroundActive == 11)
+        {
+            item11.SetActive(true);
+        }
+
+        if(BackgroundActive == 12)
+        {
+            item12.SetActive(true);
+        }
+
+        if(BackgroundActive == 13)
+        {
+            item13.SetActive(true);
+        }
+
+        if(BackgroundActive == 14)
+        {
+            item14.SetActive(true);
+        }
+
+        if(BackgroundActive == 15)
+        {
+            item15.SetActive(true);
+        }
+
+        if(BackgroundActive == 16)
+        {
+            item16.SetActive(true);
+        }
+
+        if(BackgroundActive == 17)
+        {
+            item17.SetActive(true);
+        }
+
+        if(BackgroundActive == 18)
+        {
+            item18.SetActive(true);
+        }
+    }
 }
