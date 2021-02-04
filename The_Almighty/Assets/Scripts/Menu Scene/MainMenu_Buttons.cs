@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -14,6 +14,10 @@ public class MainMenu_Buttons : MonoBehaviour
     //HighScore
     public Text highScore;
     public Text Coins;
+
+    //Tutorial
+    public GameObject tutorialHolder;
+
     void Start()
     {
         //HighScore
@@ -27,10 +31,14 @@ public class MainMenu_Buttons : MonoBehaviour
         
     }
 
-
-    void Update()
+    public void TutorialButton()
     {
-        
+        tutorialHolder.SetActive(true);
+    }
+
+    public void BackTutorialButton()
+    {
+        tutorialHolder.SetActive(false);
     }
 
 

@@ -36,13 +36,12 @@ public GameObject[] spawnPosition4;
 [SerializeField]
 private float spawnRateC, NextSpawnC;
 
-
     void Update()
     {
-        EnemiesNextSpawn();
-        FuelNextSpawn();
-        PowerupsNextSpawn();
-        CoinsNextSpawn();
+            EnemiesNextSpawn();
+            FuelNextSpawn();
+            PowerupsNextSpawn();
+            CoinsNextSpawn();
     }
 
     void EnemiesNextSpawn()

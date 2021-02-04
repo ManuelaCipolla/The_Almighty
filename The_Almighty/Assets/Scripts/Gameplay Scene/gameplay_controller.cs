@@ -28,15 +28,38 @@ public GameObject item16;
 public GameObject item17;
 public GameObject item18;
 
+[Header("TutorialPopUp")]
+public GameObject TutorialHolder;
+public int TutorialActive; //false
+public Toggle tutorialOff;
+public bool isOn;
 
+    //Pause in Gameplay scene
+    public static bool GameIsPaused = false;
+    public GameObject pauseUI;
 
     void Start()
+    
     {
         Animator = GetComponent<Animator>();
         spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
 
         int playerActive = PlayerPrefs.GetInt("playerActive");
         int BackgroundActive = PlayerPrefs.GetInt("BackgroundValue");
+        TutorialActive = PlayerPrefs.GetInt("TutorialActive");
+
+        //PlayerPrefs.SetInt("TutorialActive", 0);
+
+        tutorialOff = GetComponent<Toggle>();
+
+        Time.timeScale = 0f;
+
+        if(TutorialActive == 2)
+        {
+            Debug.Log("Tutorial 2");
+            Time.timeScale = 1f;
+            TutorialHolder.SetActive(false);
+        }
 
         //Magician
         if(playerActive == 1)
@@ -155,5 +178,71 @@ public GameObject item18;
         {
             item18.SetActive(true);
         }
+
+    }
+
+    void Update()
+    {
+        TutorialActive = PlayerPrefs.GetInt("TutorialActive");
+        //Pause
+        PauseMenu();
+
+        if(TutorialActive == 1)
+        {
+            Time.timeScale = 1f;
+            TutorialActive = 2;
+            PlayerPrefs.SetInt("TutorialActive", TutorialActive);
+        }
+    }
+
+    public void BackTutorialOnClick()
+    {
+        TutorialHolder.SetActive(false);
+        Time.timeScale = 1f;
+        if(isOn == true)
+        {
+        TutorialActive = 1;
+        PlayerPrefs.SetInt("TutorialActive", TutorialActive);
+        }
+    }
+
+    public void TutorialOffToggle(bool tog)
+    {
+        isOn = true;
+    }
+
+        //PauseMenu
+    void PauseMenu()
+    {
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            if(GameIsPaused)
+            {
+                Resume();
+            }
+            else
+            {
+                Pause();
+            }
+        }
+
+        else
+        {
+            
+        }
+    }
+
+    public void Resume()
+    {
+        pauseUI.SetActive(false);
+        Time.timeScale = 1f;
+        GameIsPaused = false;
+    }
+
+    void Pause()
+    {
+        pauseUI.SetActive(true);
+        Time.timeScale = 0f;
+        GameIsPaused = true;
     }
 }

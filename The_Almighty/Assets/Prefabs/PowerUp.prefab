@@ -105,6 +105,12 @@ MonoBehaviour:
   _speed: 5
   Player1Holder: {fileID: 0}
   scaleChange: {x: 0, y: 0, z: 0}
+  slowDownEffect: {fileID: 804650877433646890, guid: baa5d919db836d747b3382d29f0bebd0,
+    type: 3}
+  slowTimeEffect: {fileID: 4155728077818495627, guid: 681295b0358b16145abac602da13253d,
+    type: 3}
+  speedUpEffect: {fileID: 9100891664476196041, guid: c7c0652513ca9e7478e3a46b4d3623cc,
+    type: 3}
 --- !u!61 &364834844843526811
 BoxCollider2D:
   m_ObjectHideFlags: 0

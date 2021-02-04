@@ -99,46 +99,51 @@ public class StoreController : MonoBehaviour
     public GameObject item17Equip;
     public GameObject item18Equip;
 
+    // CAMERA SHAKE //
+    
+
+[Header("ChangeColor")]
+    public GameObject ChangeColor;
+    public Animator camShake;
 
     void Start()
     {
-        //PlayerPrefs.SetInt("CurrentCoins", 3000000);
+        //PlayerPrefs.SetInt("CurrentCoins", 0);
         MoneyToBuy -= 700;
         MoneyToBuyBG -= 350;
+
+
+        
+                    // CHEATS  //
+        /*PlayerPrefs.SetInt("MageBought", 0);
+        PlayerPrefs.SetInt("BearBought", 0);
+        PlayerPrefs.SetInt("PlayerActive", 3);
+        PlayerPrefs.SetInt("BackgroundValue", 0);  
+        
+        PlayerPrefs.SetInt("item2Bought", 0);
+        PlayerPrefs.SetInt("item3Bought", 0);
+        PlayerPrefs.SetInt("item4Bought", 0);
+        PlayerPrefs.SetInt("item5Bought", 0);
+        PlayerPrefs.SetInt("item6Bought", 0);
+        PlayerPrefs.SetInt("item7Bought", 0);
+        PlayerPrefs.SetInt("item8Bought", 0);
+        PlayerPrefs.SetInt("item9Bought", 0);
+        PlayerPrefs.SetInt("item10Bought", 0);
+        PlayerPrefs.SetInt("item11Bought", 0);
+        PlayerPrefs.SetInt("item12Bought", 0);
+        PlayerPrefs.SetInt("item13Bought", 0);
+        PlayerPrefs.SetInt("item14Bought", 0);
+        PlayerPrefs.SetInt("item15Bought", 0);
+        PlayerPrefs.SetInt("item16Bought", 0);
+        PlayerPrefs.SetInt("item17Bought", 0);
+        PlayerPrefs.SetInt("item18Bought", 0);*/
         
         playerValue = PlayerPrefs.GetInt("playerActive");
         BackgroundValue = PlayerPrefs.GetInt("BackgroundValue");
         //
         MageBought = PlayerPrefs.GetInt("MageBought");
         BearBought = PlayerPrefs.GetInt("BearBought");
-        /*item2Bought = PlayerPrefs.GetInt("item2Bought");
-        item3Bought = PlayerPrefs.GetInt("item3Bought");
-        item4Bought = PlayerPrefs.GetInt("item4Bought");
-        item5Bought = PlayerPrefs.GetInt("item5Bought");
-        item6Bought = PlayerPrefs.GetInt("item6Bought");
-        item7Bought = PlayerPrefs.GetInt("item7Bought");
-        item8Bought = PlayerPrefs.GetInt("item8Bought");
-        item9Bought = PlayerPrefs.GetInt("item9Bought");
-        item10Bought = PlayerPrefs.GetInt("item10Bought");
-        item11Bought = PlayerPrefs.GetInt("item11Bought");
-        item12Bought = PlayerPrefs.GetInt("item12Bought");
-        item13Bought = PlayerPrefs.GetInt("item13Bought");
-        item14Bought = PlayerPrefs.GetInt("item14Bought");
-        item15Bought = PlayerPrefs.GetInt("item15Bought");
-        item16Bought = PlayerPrefs.GetInt("item16Bought");
-        item17Bought = PlayerPrefs.GetInt("item17Bought");
-        item18Bought = PlayerPrefs.GetInt("item18Bought");*/
 
-
-            // CHEATS  //
-        /*PlayerPrefs.SetInt("MageBought", 0);
-        PlayerPrefs.SetInt("BearBought", 0);
-        PlayerPrefs.SetInt("Bear", 0);
-        PlayerPrefs.SetInt("Mage", 0);
-        PlayerPrefs.SetInt("Clown", 0);*/      
-        
-        //PlayerPrefs.SetInt("item2Bought", 0);
-        //PlayerPrefs.SetInt("item3Bought", 0);
     }
     void Update()
     {    
@@ -690,7 +695,7 @@ public class StoreController : MonoBehaviour
         }
     }
 
-
+    // BUY PLAYERS //
     public void BuyMagicianOnClick()
     {
         if(PlayerPrefs.GetInt("CurrentCoins") >= 700)
@@ -705,11 +710,11 @@ public class StoreController : MonoBehaviour
         else
         {
             Debug.Log("Play more, you dont have enough");
+            StartCoroutine(ShakeCamera());
         }
     
     }
 
-    //BUY PLAYERS
     public void BuyBearOnClick()
     {
         if(PlayerPrefs.GetInt("CurrentCoins") >= 700)
@@ -724,10 +729,11 @@ public class StoreController : MonoBehaviour
         else
         {
             Debug.Log("Play more, you dont have enough");
+            StartCoroutine(ShakeCamera());
         }
     }
 
-    //EQUIP PLAYERS
+    // EQUIP PLAYERS //
     public void EquipMagicianOnClick()
     {
         Debug.Log("EquippedMage");
@@ -764,6 +770,7 @@ public class StoreController : MonoBehaviour
         else
         {
             Debug.Log("Play more, you dont have enough");
+            StartCoroutine(ShakeCamera());
         }
     }
 
@@ -781,6 +788,7 @@ public class StoreController : MonoBehaviour
         else
         {
             Debug.Log("Play more, you dont have enough");
+            StartCoroutine(ShakeCamera());
         }
     }
 
@@ -798,6 +806,7 @@ public class StoreController : MonoBehaviour
         else
         {
             Debug.Log("Play more, you dont have enough");
+            StartCoroutine(ShakeCamera());
         }
     }
 
@@ -815,6 +824,7 @@ public class StoreController : MonoBehaviour
         else
         {
             Debug.Log("Play more, you dont have enough");
+            StartCoroutine(ShakeCamera());
         }
     }
 
@@ -832,6 +842,7 @@ public class StoreController : MonoBehaviour
         else
         {
             Debug.Log("Play more, you dont have enough");
+            StartCoroutine(ShakeCamera());
         }
     }
 
@@ -849,6 +860,7 @@ public class StoreController : MonoBehaviour
         else
         {
             Debug.Log("Play more, you dont have enough");
+            StartCoroutine(ShakeCamera());
         }
     }
 
@@ -866,6 +878,7 @@ public class StoreController : MonoBehaviour
         else
         {
             Debug.Log("Play more, you dont have enough");
+            StartCoroutine(ShakeCamera());
         }
     }
 
@@ -883,6 +896,7 @@ public class StoreController : MonoBehaviour
         else
         {
             Debug.Log("Play more, you dont have enough");
+            StartCoroutine(ShakeCamera());
         }
     }
 
@@ -900,6 +914,7 @@ public class StoreController : MonoBehaviour
         else
         {
             Debug.Log("Play more, you dont have enough");
+            StartCoroutine(ShakeCamera());
         }
     }
 
@@ -917,6 +932,7 @@ public class StoreController : MonoBehaviour
         else
         {
             Debug.Log("Play more, you dont have enough");
+            StartCoroutine(ShakeCamera());
         }
     }
 
@@ -934,6 +950,7 @@ public class StoreController : MonoBehaviour
         else
         {
             Debug.Log("Play more, you dont have enough");
+            StartCoroutine(ShakeCamera());
         }
     }
 
@@ -951,6 +968,7 @@ public class StoreController : MonoBehaviour
         else
         {
             Debug.Log("Play more, you dont have enough");
+            StartCoroutine(ShakeCamera());
         }
     }
 
@@ -968,6 +986,7 @@ public class StoreController : MonoBehaviour
         else
         {
             Debug.Log("Play more, you dont have enough");
+            StartCoroutine(ShakeCamera());
         }
     }
 
@@ -985,6 +1004,7 @@ public class StoreController : MonoBehaviour
         else
         {
             Debug.Log("Play more, you dont have enough");
+            StartCoroutine(ShakeCamera());
         }
     }
 
@@ -1002,6 +1022,7 @@ public class StoreController : MonoBehaviour
         else
         {
             Debug.Log("Play more, you dont have enough");
+            StartCoroutine(ShakeCamera());
         }
     }
 
@@ -1019,6 +1040,7 @@ public class StoreController : MonoBehaviour
         else
         {
             Debug.Log("Play more, you dont have enough");
+            StartCoroutine(ShakeCamera());
         }
     }
 
@@ -1036,6 +1058,7 @@ public class StoreController : MonoBehaviour
         else
         {
             Debug.Log("Play more, you dont have enough");
+            StartCoroutine(ShakeCamera());
         }
     }
 
@@ -1163,5 +1186,12 @@ public class StoreController : MonoBehaviour
         Debug.Log("EquippedItem18");
         BackgroundValue = 18;
         PlayerPrefs.SetInt("BackgroundValue", BackgroundValue);
+    }
+
+    IEnumerator ShakeCamera()
+    {
+        ChangeColor.SetActive(true);
+        yield return new WaitForSeconds(0.2f);
+        ChangeColor.SetActive(false);
     }
 }

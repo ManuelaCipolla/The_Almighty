@@ -7,11 +7,9 @@ public class PowerUps : MonoBehaviour
     //Powerups
     public float multiplier = 2f;
     public float duration = 10f;
-    public GameObject pickupEffect;
+
     //public GameObject Shield;
     public GameObject instance;
-
-    //public bool IsPickupActive = false;
 
     //Spawning / movement
     private float rotationSpeed;
@@ -21,12 +19,6 @@ public class PowerUps : MonoBehaviour
     private Vector2 direction;
     private targetPoint target;
     private float shift;
-
-//pick up player size
-    public GameObject Player1Holder;
-    public Vector3 scaleChange;
-
-
 
     void Start()
 {
@@ -88,7 +80,6 @@ public class PowerUps : MonoBehaviour
     IEnumerator PickupSpeed(Collider2D Player1) //speed Powerup
     {
         Debug.Log("Picked up speed!");
-        
         //Instantiate(pickupEffect, transform.position, transform.rotation);
         Player1 speed = Player1.GetComponent<Player1>();
         speed._speed *= multiplier;
@@ -114,7 +105,7 @@ public class PowerUps : MonoBehaviour
     IEnumerator PickUpSlowTime(Collider2D Player1)
     {
         Debug.Log("Picked up slowTime");
-        Time.timeScale= 0.3f;
+        Time.timeScale= 0.4f;
         GetComponent<SpriteRenderer>().enabled = false;
         GetComponent<Collider2D>().enabled = false;
         yield return new WaitForSeconds(duration);
