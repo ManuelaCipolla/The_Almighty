@@ -29,11 +29,10 @@ public class Player_Test : MonoBehaviour
     [Header("Animation")]
     public float HorizontalInput;
     public float VerticalInput;
-    public SpriteRenderer theSR;
+    //public SpriteRenderer theSR; //its part of old flip
     public Animator anim;
 
     public Animator camShake;
-    public ParticleSystem fire;
 
     private bool facingRight = true;
     
@@ -47,10 +46,22 @@ public class Player_Test : MonoBehaviour
     public Collider2D triggerCollider;
     public SpriteRenderer playerSprite;
 
+    [Header("Particles")]
+    [SerializeField]
+    private ParticleSystem partDead;
+
+    [SerializeField]
+    private ParticleSystem partJet;
+
+    [SerializeField]
+    private GameObject fuelBar;
+
+    
+
+
     
     void Start()
     {
-        
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         //spawning point for p1
@@ -65,9 +76,11 @@ public class Player_Test : MonoBehaviour
     void FixedUpdate()
     {
         FuelRate();
+        
     }
     void Update() 
     {
+        
 
         //Boundaries of screen 
         transform.position = new Vector3(transform.position.x, Mathf.Clamp(transform.position.y, -5, 5),0);
@@ -100,6 +113,7 @@ public class Player_Test : MonoBehaviour
         if( _currentFuel > 0)
         {
             Movement();
+            
         }
 
         if( _currentFuel <= 0)
@@ -125,7 +139,7 @@ public class Player_Test : MonoBehaviour
         CreateFire();
     }*/
     
-    private void Movement() //Player movement
+    void Movement() //Player movement
     {
         //better way to make this but we cannot do this
         //Vector2 direction = new Vector2(Input.GetAxis("Horizontal1"), Input.GetAxis("Vertical1"));
@@ -143,8 +157,10 @@ public class Player_Test : MonoBehaviour
         if(HorizontalInput != 0 || VerticalInput != 0)
         {
             _currentFuel -= _fuelBurnRate * Time.deltaTime;
+            ParticleJetSmoke();
+            
         }
-        CreateJetpackParticle();
+        
     }
 
 
@@ -156,7 +172,10 @@ public class Player_Test : MonoBehaviour
             Debug.Log("something smart");
             curHealth = curHealth - Damage;
             camShake.SetTrigger("isShake");
+            if(curHealth != 0)
+            {
             StartCoroutine(playerHitRoutine());
+            }
             //anim.SetBool("isDmgHit",true);
 
             
@@ -183,23 +202,17 @@ public class Player_Test : MonoBehaviour
         for (int i = 0; i < numberOfFlashes; i++)
         {
             anim.enabled = false;
-            theSR.color = new Color(1f, 0.5f, 0.5f, 0.5f);
+            playerSprite.color = new Color(1f, 0.5f, 0.5f, 0.5f);
             yield return new WaitForSeconds(flashDuration);
-            theSR.color = new Color(1f, 1f, 1f, 1f);
+            playerSprite.color = new Color(1f, 1f, 1f, 1f);
             anim.enabled = true;
             yield return new WaitForSeconds(flashDuration);
         }
-        theSR.color = new Color(1f, 1f, 1f, 1f);
+        playerSprite.color = new Color(1f, 1f, 1f, 1f);
         triggerCollider.enabled = true;
     }
 
-        void Death() //literal death (in game and real life wowa)
-    {
-        Debug.Log("YOU DEAD FUCKER");
-        Destroy(gameObject, 1);
-        
-        
-    }
+
 
     /*void Flip()
     {
@@ -222,8 +235,18 @@ public class Player_Test : MonoBehaviour
             transform.Rotate(0, 180, 0);
         }
     }
-    void CreateJetpackParticle()
+    void ParticleJetSmoke()
     {
-        fire.Play();
+        Debug.Log("part 1");
+        partJet.Play();
+    }
+    
+    void Death() //literal death (in game and real life wowa)
+    {
+        Debug.Log("YOU DEAD FUCKER");
+        playerSprite.color = new Color(0f, 0f, 0f, 0f);
+        fuelBar.SetActive(false);
+        partDead.Play();
+        Destroy(gameObject, 1);
     }
 }

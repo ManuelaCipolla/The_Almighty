@@ -2945,7 +2945,7 @@ SpriteRenderer:
   m_SortingLayerID: 1306569137
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1613783874362997873, guid: 2c42a9436b516cb45981d942962c07f6,
+  m_Sprite: {fileID: 3479426148016456104, guid: c11e64420acfea9459327dafa6993b8e,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -2985,7 +2985,7 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.06, y: -0.09}
+  m_Offset: {x: 0.06, y: 0.31}
   m_Size: {x: 3.93, y: 7.24}
   m_Direction: 0
 --- !u!50 &1058228364
@@ -4886,6 +4886,8 @@ MonoBehaviour:
   - {fileID: 1120393423825581739, guid: 7d99b393d805cff4ba345333902fa5be, type: 3}
   - {fileID: 3399963550407427767, guid: 3a4f913c979030f4fbf6e91d957b77a6, type: 3}
   - {fileID: 8874583197034626888, guid: f3ff1e4fe8a34d648a1a91ca11889155, type: 3}
+  - {fileID: 6832275171104434042, guid: 8ad50765e7a16c0479c7bf0b06e3d824, type: 3}
+  - {fileID: 8185440792395390837, guid: 0b82a50133641af4f8a7ad2bf7a8688f, type: 3}
   spawnPosition:
   - {fileID: 485883975}
   - {fileID: 945811953}
