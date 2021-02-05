@@ -22,7 +22,7 @@ public class MainMenu_Buttons : MonoBehaviour
     {
         //HighScore
         highScore.text = "HIGHSCORE " + Mathf.Round(PlayerPrefs.GetFloat("highScore"));
-        Coins.text = "COINS " + PlayerPrefs.GetInt("CurrentCoins");
+        Coins.text = "COINS " + PlayerPrefs.GetInt("HighCoins");
 
         //backbutton
         Button btn = Back.GetComponent<Button>();

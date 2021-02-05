@@ -65,6 +65,7 @@ public class Player1 : MonoBehaviour
     void Start()
     {
         coinScore = 0;
+        highCoin = PlayerPrefs.GetInt("HighCoins");
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         //spawning point for p1
@@ -212,7 +213,8 @@ public class Player1 : MonoBehaviour
         Debug.Log("YOU DEAD FUCKER");
         StartCoroutine(DeathRoutine());
         PlayerPrefs.SetInt("CurrentCoins", coins + coinScore);
-        PlayerPrefs.Save();
+        PlayerPrefs.SetInt("HighCoins", coins + coinScore + highCoin);
+
         
     }
 

@@ -67,7 +67,7 @@ public class mainMenu_Controller : MonoBehaviour
         
         Flip();
 
-        Coins.text = "COINS " + PlayerPrefs.GetInt("CurrentCoins");
+        Coins.text = "COINS " + PlayerPrefs.GetInt("HighCoins");
     }
 
         void Movement()//Player movement

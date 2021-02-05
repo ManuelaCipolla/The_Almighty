@@ -70,7 +70,7 @@ public class CoinsBehaviour : MonoBehaviour
         audioSource.Play();
         spriteRenderer.color = new Color(0f, 0f, 0f, 0f);
         TriggerCollider.enabled = false;
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.3f);
         Destroy(gameObject);
     }
 }
