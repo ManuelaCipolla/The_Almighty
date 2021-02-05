@@ -55,13 +55,13 @@ public class MainMenu_Buttons : MonoBehaviour
     public void SettingsButton()
     {
         Options.SetActive(true);
-        MainMenu.SetActive(false);
+        //MainMenu.SetActive(false);
     }
     public void SettingsBackButton() // Back Button
     {
         Debug.Log("it work this bad bad button");
         Options.SetActive(false);
-        MainMenu.SetActive(true);
+        //MainMenu.SetActive(true);
     }
 
     public void QuitGame() // exit game

@@ -92,6 +92,8 @@ public class Player_Test : MonoBehaviour
         _fuelSlider.value = _currentFuel / _maxFuel;
         
         Flip();
+        
+        ParticleJetSmoke();
     }
 
     void Health()
@@ -157,7 +159,6 @@ public class Player_Test : MonoBehaviour
         if(HorizontalInput != 0 || VerticalInput != 0)
         {
             _currentFuel -= _fuelBurnRate * Time.deltaTime;
-            ParticleJetSmoke();
             
         }
         

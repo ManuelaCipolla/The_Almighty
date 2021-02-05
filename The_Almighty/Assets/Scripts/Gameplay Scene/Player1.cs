@@ -28,13 +28,13 @@ public class Player1 : MonoBehaviour
     private float _fuelRecharge;
 
     //animation
-        [Header("Animation")]
+    [Header("Animation")]
     public float HorizontalInput;
     public float VerticalInput;
     public SpriteRenderer theSR;
     public Animator anim;
 
-//camShake
+    //camShake
     public Animator camShake;
 
     //flip
@@ -47,11 +47,21 @@ public class Player1 : MonoBehaviour
     public int numberOfFlashes;
     public Collider2D triggerCollider;
 
-        //Coins Score
-    public int coinScore = 0;
+    //Coins Score
+    [Header("Currency")]
+    public int coinScore;
     public Text CoinText;
     public int highCoin;
     public int coins;
+    
+    
+    //particles
+    [Header("Particles")]
+    [SerializeField]
+    private ParticleSystem partDead;
+    [SerializeField]
+    private GameObject fuelBar;
+
     void Start()
     {
         coinScore = 0;
@@ -63,6 +73,8 @@ public class Player1 : MonoBehaviour
         curHealth = maxHealth;
         //fuel
         _currentFuel = _maxFuel;
+        //for audio to play
+        
     }
 
     
@@ -135,7 +147,10 @@ public class Player1 : MonoBehaviour
             Debug.Log("something smart");
             curHealth = curHealth - Damage ;
             camShake.SetTrigger("isShake");
-            StartCoroutine(playerHitRoutine());
+            if(curHealth !=0)
+            {
+                StartCoroutine(playerHitRoutine());
+            }
         }
         if(collision.gameObject.tag == "Fuel")
         {
@@ -192,14 +207,23 @@ public class Player1 : MonoBehaviour
     }*/
 
 
-        void Death() //literal death (in game and real life wowa)
+    void Death() //literal death (in game and real life wowa)
     {
         Debug.Log("YOU DEAD FUCKER");
-        Destroy(gameObject, 1);
-        SceneManager.LoadScene("Game Over");
-
+        StartCoroutine(DeathRoutine());
         PlayerPrefs.SetInt("CurrentCoins", coins + coinScore);
         PlayerPrefs.Save();
+        
+    }
+
+    IEnumerator DeathRoutine()
+    {
+        theSR.color = new Color(0f, 0f, 0f, 0f);
+        fuelBar.SetActive(false);
+        partDead.Play();
+        yield return new WaitForSeconds(1f);
+        Destroy(gameObject);
+        SceneManager.LoadScene("Game Over");
     }
 
     void Flip()

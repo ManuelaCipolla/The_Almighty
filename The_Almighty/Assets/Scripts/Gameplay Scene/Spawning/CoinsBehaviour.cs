@@ -17,17 +17,25 @@ public class CoinsBehaviour : MonoBehaviour
     public float RRminimum = 0f;
     public float RRmaximum = 0f;
 
+    //for sound/death
+    public SpriteRenderer spriteRenderer;
+    public Collider2D TriggerCollider;
 
+    //audio
+    [Header("Audio")]
 
+    public AudioSource audioSource;
 
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         rotationSpeed = Random.Range(-25,25);
         rb = GetComponent<Rigidbody2D>();
         target = GameObject.FindObjectOfType<targetPoint>();
         direction = target.transform.position - transform.position;
         shift = Random.Range( RRminimum, RRmaximum);
         rb.AddForce(new Vector2(direction.x + shift, direction.y + shift) * _speed);
+        
     }
 
 
@@ -54,7 +62,15 @@ public class CoinsBehaviour : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player1")
         {
-            Destroy(gameObject);
+            StartCoroutine(onDestroyRoutine());
         }
+    }
+    IEnumerator onDestroyRoutine()
+    {
+        audioSource.Play();
+        spriteRenderer.color = new Color(0f, 0f, 0f, 0f);
+        TriggerCollider.enabled = false;
+        yield return new WaitForSeconds(0.5f);
+        Destroy(gameObject);
     }
 }
