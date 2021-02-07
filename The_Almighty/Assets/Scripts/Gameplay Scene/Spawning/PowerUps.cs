@@ -105,7 +105,7 @@ public class PowerUps : MonoBehaviour
     IEnumerator PickUpSlowTime(Collider2D Player1)
     {
         Debug.Log("Picked up slowTime");
-        Time.timeScale= 0.4f;
+        Time.timeScale= 0.7f;
         GetComponent<SpriteRenderer>().enabled = false;
         GetComponent<Collider2D>().enabled = false;
         yield return new WaitForSeconds(duration);

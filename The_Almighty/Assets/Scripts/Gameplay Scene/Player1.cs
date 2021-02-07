@@ -61,6 +61,12 @@ public class Player1 : MonoBehaviour
     private ParticleSystem partDead;
     [SerializeField]
     private GameObject fuelBar;
+    [SerializeField]
+    private ParticleSystem PuStars;
+    [SerializeField]
+    private ParticleSystem CoinStars;
+    [SerializeField]
+    private ParticleSystem FuelEffect;
 
     void Start()
     {
@@ -87,7 +93,7 @@ public class Player1 : MonoBehaviour
     void Update()
     {
         //Boundaries of screen 
-        transform.position = new Vector3(transform.position.x, Mathf.Clamp(transform.position.y, -4.83f, 4.83f),0);
+        transform.position = new Vector3(transform.position.x, Mathf.Clamp(transform.position.y, -4.45f, 4.55f),0);
         transform.position = new Vector3(Mathf.Clamp(transform.position.x, -3.57f, 3.57f), transform.position.y, 0);
 
         Health();
@@ -141,21 +147,27 @@ public class Player1 : MonoBehaviour
 
 
 
-    void OnCollisionEnter2D(Collision2D collision)
+    void OnTriggerEnter2D(Collider2D other)
     {
-        if (collision.gameObject.tag == "Enemy")
+        if (other.CompareTag("Enemy"))
         {
             Debug.Log("something smart");
             curHealth = curHealth - Damage ;
-            camShake.SetTrigger("isShake");
             if(curHealth !=0)
             {
-                StartCoroutine(playerHitRoutine());
+                if(Damage == 1)
+                {
+                    Debug.Log("Damage 1");
+                    StartCoroutine(playerHitRoutine());
+                    camShake.SetTrigger("isShake");
+                }
+
             }
         }
-        if(collision.gameObject.tag == "Fuel")
+        if(other.CompareTag("Fuel"))
         {
             Debug.Log("Fuel up baby");
+            FuelEffect.Play();
             _currentFuel = _currentFuel + _fuelRecharge;
             
             if(_currentFuel > _maxFuel)
@@ -164,17 +176,24 @@ public class Player1 : MonoBehaviour
             }
         }
 
-        if(collision.gameObject.tag == "Coins")
+        if(other.CompareTag("Coins"))
         {
-            coinScore += 1;
+            coinScore += 5;
             coins = PlayerPrefs.GetInt("CurrentCoins", coinScore);
             CoinText.text = "COIN " + coinScore;
+            CoinStars.Play();
+        }
+
+        if(other.CompareTag("powerUp"))
+        {
+            PuStars.Play();
         }
     }
 
     IEnumerator playerHitRoutine ()
     {
-        triggerCollider.enabled = false;
+        //triggerCollider.enabled = false;
+        Damage = 0;
 
         for (int i = 0; i < numberOfFlashes; i++)
         {
@@ -186,27 +205,9 @@ public class Player1 : MonoBehaviour
             yield return new WaitForSeconds(flashDuration);
         }
         theSR.color = new Color(1f, 1f, 1f, 1f);
-        triggerCollider.enabled = true;
-    }
-
-    /*public IEnumerator PlayerShield()
-    {
-        Debug.Log("Picked up Shield!");
-        Damage= 0;
-        for (int i = 0; i < numberOfFlashes; i++)
-        {
-            anim.enabled = false;
-            theSR.color = new Color(0.5f, 0.5f, 1f, 1f);
-            yield return new WaitForSeconds(flashDuration);
-            theSR.color = new Color(1f, 1f, 1f, 1f);
-            anim.enabled = true;
-            yield return new WaitForSeconds(flashDuration);
-        }
-        theSR.color = new Color(1f, 1f, 1f, 1f);
+        //triggerCollider.enabled = true;
         Damage = 1;
-        Destroy(gameObject.GetComponent<PowerUps>());
-    }*/
-
+    }
 
     void Death() //literal death (in game and real life wowa)
     {
@@ -237,4 +238,22 @@ public class Player1 : MonoBehaviour
             transform.Rotate(0, 180, 0);
         }
     }
+
+        /*public IEnumerator PlayerShield()
+    {
+        Debug.Log("Picked up Shield!");
+        Damage= 0;
+        for (int i = 0; i < numberOfFlashes; i++)
+        {
+            anim.enabled = false;
+            theSR.color = new Color(0.5f, 0.5f, 1f, 1f);
+            yield return new WaitForSeconds(flashDuration);
+            theSR.color = new Color(1f, 1f, 1f, 1f);
+            anim.enabled = true;
+            yield return new WaitForSeconds(flashDuration);
+        }
+        theSR.color = new Color(1f, 1f, 1f, 1f);
+        Damage = 1;
+        Destroy(gameObject.GetComponent<PowerUps>());
+    }*/
 }

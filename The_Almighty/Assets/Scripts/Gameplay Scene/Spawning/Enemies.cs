@@ -7,6 +7,8 @@ public class Enemies : MonoBehaviour
     private float rotationSpeed;
     private Rigidbody2D rb;
     [SerializeField]
+    private Collider2D _collider;
+    [SerializeField]
     private float _speed;
     private Vector2 direction;
     private targetPoint target;
@@ -14,10 +16,13 @@ public class Enemies : MonoBehaviour
 
     public float RRminimum = 0f;
     public float RRmaximum = 0f;
+    Player1 player1;
 
 
     void Start()
     {
+        player1 = GetComponent<Player1>();
+        _collider = GetComponent<PolygonCollider2D>();
         rotationSpeed = Random.Range(-25,25);
         rb = GetComponent<Rigidbody2D>();
         target = GameObject.FindObjectOfType<targetPoint>();
@@ -44,11 +49,10 @@ public class Enemies : MonoBehaviour
             Destroy(gameObject);
         }
     }
-    void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag == "Player1")
+    void OnTriggerEnter2D(Collider2D other)
+    {  
+        if (other.CompareTag("Player1"))
         {
-
             Destroy(gameObject);
         }
     }

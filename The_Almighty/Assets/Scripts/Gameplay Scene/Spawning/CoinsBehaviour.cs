@@ -58,9 +58,9 @@ public class CoinsBehaviour : MonoBehaviour
         }
     }
 
-    void OnCollisionEnter2D(Collision2D collision)
+    void OnTriggerEnter2D(Collider2D other)
     {
-        if (collision.gameObject.tag == "Player1")
+        if (other.CompareTag("Player1"))
         {
             StartCoroutine(onDestroyRoutine());
         }
@@ -70,7 +70,7 @@ public class CoinsBehaviour : MonoBehaviour
         audioSource.Play();
         spriteRenderer.color = new Color(0f, 0f, 0f, 0f);
         TriggerCollider.enabled = false;
-        yield return new WaitForSeconds(0.3f);
+        yield return new WaitForSeconds(0.5f);
         Destroy(gameObject);
     }
 }

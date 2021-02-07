@@ -41,9 +41,9 @@ public class FuelBehaviour : MonoBehaviour
             Destroy(gameObject);
         }
     }
-    void OnCollisionEnter2D(Collision2D collision)
+    void OnTriggerEnter2D(Collider2D other)
     {
-        if (collision.gameObject.tag == "Player1")
+        if (other.CompareTag("Player1"))
         {
 
             Destroy(gameObject);

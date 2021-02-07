@@ -72,8 +72,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1306569137
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 7263047342422913032, guid: b96805c09e49b614ca92987e5f74ed86,
     type: 3}
@@ -137,7 +137,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.0076779127, y: 0.03071165}
@@ -159,6 +159,7 @@ MonoBehaviour:
   RRminimum: -3
   RRmaximum: 3
   spriteRenderer: {fileID: 330922548954992329}
+  TriggerCollider: {fileID: 7277804273073538976}
   audioSource: {fileID: 4782805456897945656}
 --- !u!82 &4782805456897945656
 AudioSource:
