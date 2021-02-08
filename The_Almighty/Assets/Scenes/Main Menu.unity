@@ -886,9 +886,9 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 6316656244061863474, guid: 32c83a975639fba4b9f1a127de8e1c76,
     type: 2}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: cf3084b7ad9036949a495013c5bc402c, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -1004,7 +1004,7 @@ MonoBehaviour:
   effectsSlider: {fileID: 255767463}
   masterDefaultValue: 0.75
   musicDefaultValue: 0.26
-  effectDefaultValue: 0.75
+  effectDefaultValue: 0.5
 --- !u!1 &222891460
 GameObject:
   m_ObjectHideFlags: 0

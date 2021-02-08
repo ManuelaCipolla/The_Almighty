@@ -21,14 +21,8 @@ public class CoinsBehaviour : MonoBehaviour
     public SpriteRenderer spriteRenderer;
     public Collider2D TriggerCollider;
 
-    //audio
-    [Header("Audio")]
-
-    public AudioSource audioSource;
-
     void Start()
     {
-        audioSource = GetComponent<AudioSource>();
         rotationSpeed = Random.Range(-25,25);
         rb = GetComponent<Rigidbody2D>();
         target = GameObject.FindObjectOfType<targetPoint>();
@@ -62,15 +56,17 @@ public class CoinsBehaviour : MonoBehaviour
     {
         if (other.CompareTag("Player1"))
         {
-            StartCoroutine(onDestroyRoutine());
+            Destroy(gameObject);
+            //StartCoroutine(onDestroyRoutine());
         }
     }
-    IEnumerator onDestroyRoutine()
+    //old way the sound was done
+    /*IEnumerator onDestroyRoutine()
     {
         audioSource.Play();
         spriteRenderer.color = new Color(0f, 0f, 0f, 0f);
         TriggerCollider.enabled = false;
         yield return new WaitForSeconds(0.5f);
         Destroy(gameObject);
-    }
+    }*/
 }

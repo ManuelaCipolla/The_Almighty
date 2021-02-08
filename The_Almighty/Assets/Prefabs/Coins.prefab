@@ -160,7 +160,6 @@ MonoBehaviour:
   RRmaximum: 3
   spriteRenderer: {fileID: 330922548954992329}
   TriggerCollider: {fileID: 7277804273073538976}
-  audioSource: {fileID: 4782805456897945656}
 --- !u!82 &4782805456897945656
 AudioSource:
   m_ObjectHideFlags: 0
@@ -168,7 +167,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330922548954992331}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 7687986513985192703, guid: 32c83a975639fba4b9f1a127de8e1c76,
     type: 2}

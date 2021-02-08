@@ -68,6 +68,27 @@ public class Player1 : MonoBehaviour
     [SerializeField]
     private ParticleSystem FuelEffect;
 
+    //audio
+    [Header("Audio")]
+    [SerializeField]
+    private AudioSource audioSource;
+    [SerializeField]
+    private AudioClip _coinSound;
+    [SerializeField]
+    private float _coinVolume;
+    [SerializeField]
+    private AudioClip _fuelSound;
+    [SerializeField]
+    private float _fuelVolume;
+    [SerializeField]
+    private AudioClip _boxSound;
+    [SerializeField]
+    private float _boxVolume;
+    [SerializeField]
+    private AudioClip _enemySound;
+    [SerializeField]
+    private float _enemyVolume;
+
     void Start()
     {
         coinScore = 0;
@@ -81,7 +102,7 @@ public class Player1 : MonoBehaviour
         //fuel
         _currentFuel = _maxFuel;
         //for audio to play
-        
+        audioSource = GetComponent<AudioSource>();
     }
 
     
@@ -152,7 +173,7 @@ public class Player1 : MonoBehaviour
         if (other.CompareTag("Enemy"))
         {
             Debug.Log("something smart");
-            curHealth = curHealth - Damage ;
+            curHealth = curHealth - Damage;
             if(curHealth !=0)
             {
                 if(Damage == 1)
@@ -160,6 +181,8 @@ public class Player1 : MonoBehaviour
                     Debug.Log("Damage 1");
                     StartCoroutine(playerHitRoutine());
                     camShake.SetTrigger("isShake");
+                    //audio
+                    audioSource.PlayOneShot(_enemySound ,_enemyVolume);
                 }
 
             }
@@ -167,7 +190,11 @@ public class Player1 : MonoBehaviour
         if(other.CompareTag("Fuel"))
         {
             Debug.Log("Fuel up baby");
+            //particle
             FuelEffect.Play();
+            //audio
+            audioSource.PlayOneShot(_fuelSound ,_fuelVolume);
+
             _currentFuel = _currentFuel + _fuelRecharge;
             
             if(_currentFuel > _maxFuel)
@@ -181,12 +208,19 @@ public class Player1 : MonoBehaviour
             coinScore += 5;
             coins = PlayerPrefs.GetInt("CurrentCoins", coinScore);
             CoinText.text = "COIN " + coinScore;
+            //particle
             CoinStars.Play();
+            //audio
+            audioSource.PlayOneShot(_coinSound ,_coinVolume);
+
         }
 
         if(other.CompareTag("powerUp"))
         {
+            //particle
             PuStars.Play();
+            //audio
+            audioSource.PlayOneShot(_boxSound ,_boxVolume);
         }
     }
 

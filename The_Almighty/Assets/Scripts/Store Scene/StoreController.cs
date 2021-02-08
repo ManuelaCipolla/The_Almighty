@@ -106,8 +106,15 @@ public class StoreController : MonoBehaviour
     public GameObject ChangeColor;
     public Animator camShake;
 
+    [Header("Audio")]
+    [SerializeField]
+    private AudioSource audioSource;
+
     void Start()
     {
+        //for audio to play
+        audioSource = GetComponent<AudioSource>();
+
         //PlayerPrefs.SetInt("HighCoins", 10000);
         MoneyToBuy -= 500;
         MoneyToBuyBG -= 300;
@@ -172,7 +179,6 @@ public class StoreController : MonoBehaviour
         if(PlayerPrefs.GetInt("MageBought") == 1) //true
         {
             BuyMage.SetActive(false);
-            
         }
 
         if(PlayerPrefs.GetInt("BearBought") == 1) //true
@@ -710,6 +716,8 @@ public class StoreController : MonoBehaviour
             //
             MageBought = 1; //true
             PlayerPrefs.SetInt("MageBought", MageBought);
+            //audio
+            audioSource.Play();
         }
         else
         {
@@ -729,6 +737,8 @@ public class StoreController : MonoBehaviour
             //
             BearBought = 1; //true
             PlayerPrefs.SetInt("BearBought", BearBought);
+            //audio
+            audioSource.Play();
         }
         else
         {
@@ -770,6 +780,8 @@ public class StoreController : MonoBehaviour
             //
             item2Bought = 1; //true
             PlayerPrefs.SetInt("item2Bought", item2Bought);
+            //audio
+            audioSource.Play();
         }
         else
         {
@@ -788,6 +800,8 @@ public class StoreController : MonoBehaviour
             //
             item3Bought = 1; //true
             PlayerPrefs.SetInt("item3Bought", item3Bought);
+            //audio
+            audioSource.Play();
         }
         else
         {
@@ -806,6 +820,8 @@ public class StoreController : MonoBehaviour
             //
             item4Bought = 1; //true
             PlayerPrefs.SetInt("item4Bought", item4Bought);
+            //audio
+            audioSource.Play();
         }
         else
         {
@@ -824,6 +840,8 @@ public class StoreController : MonoBehaviour
             //
             item5Bought = 1; //true
             PlayerPrefs.SetInt("item5Bought", item5Bought);
+            //audio
+            audioSource.Play();
         }
         else
         {
@@ -842,6 +860,8 @@ public class StoreController : MonoBehaviour
             //
             item6Bought = 1; //true
             PlayerPrefs.SetInt("item6Bought", item6Bought);
+            //audio
+            audioSource.Play();
         }
         else
         {
@@ -860,6 +880,8 @@ public class StoreController : MonoBehaviour
             //
             item7Bought = 1; //true
             PlayerPrefs.SetInt("item7Bought", item7Bought);
+            //audio
+            audioSource.Play();
         }
         else
         {
@@ -878,6 +900,8 @@ public class StoreController : MonoBehaviour
             //
             item8Bought = 1; //true
             PlayerPrefs.SetInt("item8Bought", item8Bought);
+            //audio
+            audioSource.Play();
         }
         else
         {
@@ -896,6 +920,8 @@ public class StoreController : MonoBehaviour
             //
             item9Bought = 1; //true
             PlayerPrefs.SetInt("item9Bought", item9Bought);
+            //audio
+            audioSource.Play();
         }
         else
         {
@@ -914,6 +940,8 @@ public class StoreController : MonoBehaviour
             //
             item10Bought = 1; //true
             PlayerPrefs.SetInt("item10Bought", item10Bought);
+            //audio
+            audioSource.Play();
         }
         else
         {
@@ -932,6 +960,8 @@ public class StoreController : MonoBehaviour
             //
             item11Bought = 1; //true
             PlayerPrefs.SetInt("item11Bought", item11Bought);
+            //audio
+            audioSource.Play();
         }
         else
         {
@@ -950,6 +980,8 @@ public class StoreController : MonoBehaviour
             //
             item12Bought = 1; //true
             PlayerPrefs.SetInt("item12Bought", item12Bought);
+            //audio
+            audioSource.Play();
         }
         else
         {
@@ -968,6 +1000,8 @@ public class StoreController : MonoBehaviour
             //
             item13Bought = 1; //true
             PlayerPrefs.SetInt("item13Bought", item13Bought);
+            //audio
+            audioSource.Play();
         }
         else
         {
@@ -986,6 +1020,8 @@ public class StoreController : MonoBehaviour
             //
             item14Bought = 1; //true
             PlayerPrefs.SetInt("item14Bought", item14Bought);
+            //audio
+            audioSource.Play();
         }
         else
         {
@@ -1004,6 +1040,8 @@ public class StoreController : MonoBehaviour
             //
             item15Bought = 1; //true
             PlayerPrefs.SetInt("item15Bought", item15Bought);
+            //audio
+            audioSource.Play();
         }
         else
         {
@@ -1022,6 +1060,8 @@ public class StoreController : MonoBehaviour
             //
             item16Bought = 1; //true
             PlayerPrefs.SetInt("item16Bought", item16Bought);
+            //audio
+            audioSource.Play();
         }
         else
         {
@@ -1040,6 +1080,8 @@ public class StoreController : MonoBehaviour
             //
             item17Bought = 1; //true
             PlayerPrefs.SetInt("item17Bought", item17Bought);
+            //audio
+            audioSource.Play();
         }
         else
         {
@@ -1058,6 +1100,8 @@ public class StoreController : MonoBehaviour
             //
             item18Bought = 1; //true
             PlayerPrefs.SetInt("item18Bought", item18Bought);
+            //audio
+            audioSource.Play();
         }
         else
         {
