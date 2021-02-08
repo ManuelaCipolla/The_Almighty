@@ -24,8 +24,6 @@ ScriptsOnlyBuild:
     - UnityEditor.U2D.Animation.BoneGizmo
     Unity.2D.Tilemap.Editor.dll:
     - UnityEditor.Tilemaps.GridPaintingState
-    - UnityEditor.Tilemaps.GridPaletteBrushes
-    - UnityEditor.Tilemaps.GridPalettes
     - UnityEditor.Tilemaps.SceneViewGridManager
     - UnityEditor.Tilemaps.TileDragAndDropManager
     Unity.Rider.Editor.dll:
@@ -732,7 +730,7 @@ ScriptsOnlyBuild:
     className: SpriteSkinEntity
   - hash:
       serializedVersion: 2
-      Hash: 4a4d3b28cd5c0cdf182bf9360fc5f89d
+      Hash: 532f8b9c42e24a3a56f96d3e6843b23a
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Enemies
@@ -1038,7 +1036,7 @@ ScriptsOnlyBuild:
     className: SignalEmitter
   - hash:
       serializedVersion: 2
-      Hash: 3272fb88065a32c840929084c7cdb7ed
+      Hash: 3b6090f89f56d95f30c5385c97a43cfd
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Player1
@@ -1080,4 +1078,4 @@ ScriptsOnlyBuild:
   - Assets/Scenes/Store.unity
   - Assets/Scenes/Game Over.unity
   playerPath: C:/Users/computer/Documents/A_MONDO/SCUOLA/Lvl5.2_1/The Almighty/Builds/FlyingAntics
-    1.5/Flying Antics.exe
+    1.6/Flying Antics.exe
