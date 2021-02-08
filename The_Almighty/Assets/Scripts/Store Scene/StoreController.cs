@@ -115,11 +115,14 @@ public class StoreController : MonoBehaviour
         //for audio to play
         audioSource = GetComponent<AudioSource>();
 
-        //PlayerPrefs.SetInt("HighCoins", 10000);
         MoneyToBuy -= 500;
         MoneyToBuyBG -= 300;
         
                     // CHEATS  //
+        
+        //PlayerPrefs.SetInt("HighCoins", 10000);
+        //PlayerPrefs.SetInt("HighCoins", 0);
+
         /*PlayerPrefs.SetInt("MageBought", 0);
         PlayerPrefs.SetInt("BearBought", 0);
         PlayerPrefs.SetInt("PlayerActive", 3);

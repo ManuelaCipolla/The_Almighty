@@ -23,6 +23,9 @@ public class MainMenu_Buttons : MonoBehaviour
         //HighScore
         highScore.text = "HIGHSCORE " + Mathf.Round(PlayerPrefs.GetFloat("highScore"));
         Coins.text = "COINS " + PlayerPrefs.GetInt("HighCoins");
+        
+        //to reset score 
+        //PlayerPrefs.SetFloat("highScore",0);
 
         //backbutton
         Button btn = Back.GetComponent<Button>();

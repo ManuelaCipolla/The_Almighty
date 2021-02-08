@@ -1,8 +1,8 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Player1 : MonoBehaviour
 {
@@ -88,6 +88,10 @@ public class Player1 : MonoBehaviour
     private AudioClip _enemySound;
     [SerializeField]
     private float _enemyVolume;
+    [SerializeField]
+    /*private AudioClip _deathSound;
+    [SerializeField]
+    private float _deathVolume;*/
 
     void Start()
     {
@@ -257,8 +261,11 @@ public class Player1 : MonoBehaviour
     {
         theSR.color = new Color(0f, 0f, 0f, 0f);
         fuelBar.SetActive(false);
+        //particles
         partDead.Play();
-        yield return new WaitForSeconds(1f);
+        //audio
+        //audioSource.PlayOneShot(_deathSound, _deathVolume);
+        yield return new WaitForSeconds(3f);
         Destroy(gameObject);
         SceneManager.LoadScene("Game Over");
     }
