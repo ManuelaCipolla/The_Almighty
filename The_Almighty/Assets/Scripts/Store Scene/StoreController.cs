@@ -112,7 +112,6 @@ public class StoreController : MonoBehaviour
         MoneyToBuy -= 500;
         MoneyToBuyBG -= 300;
         
-        
                     // CHEATS  //
         /*PlayerPrefs.SetInt("MageBought", 0);
         PlayerPrefs.SetInt("BearBought", 0);
@@ -139,6 +138,12 @@ public class StoreController : MonoBehaviour
         
         playerValue = PlayerPrefs.GetInt("playerActive");
         BackgroundValue = PlayerPrefs.GetInt("BackgroundValue");
+        
+        if(BackgroundValue == 0)
+        {
+            BackgroundValue = 1;
+            PlayerPrefs.SetInt("BackgroundValue", 1);
+        }
         //
         MageBought = PlayerPrefs.GetInt("MageBought");
         BearBought = PlayerPrefs.GetInt("BearBought");

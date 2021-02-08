@@ -24,6 +24,8 @@ ScriptsOnlyBuild:
     - UnityEditor.U2D.Animation.BoneGizmo
     Unity.2D.Tilemap.Editor.dll:
     - UnityEditor.Tilemaps.GridPaintingState
+    - UnityEditor.Tilemaps.GridPaletteBrushes
+    - UnityEditor.Tilemaps.GridPalettes
     - UnityEditor.Tilemaps.SceneViewGridManager
     - UnityEditor.Tilemaps.TileDragAndDropManager
     Unity.Rider.Editor.dll:
@@ -49,7 +51,6 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.Image
     - UnityEngine.UI.Mask
     - UnityEngine.UI.ScrollRect
-    - UnityEngine.UI.Scrollbar
     - UnityEngine.UI.Slider
     - UnityEngine.UI.Text
     - UnityEngine.UI.Toggle
@@ -342,8 +343,6 @@ ScriptsOnlyBuild:
       Script: {instanceID: 11268}
     - Class: 114
       Script: {instanceID: 11560}
-    - Class: 114
-      Script: {instanceID: 11564}
     - Class: 114
       Script: {instanceID: 11714}
     - Class: 114
@@ -1078,4 +1077,4 @@ ScriptsOnlyBuild:
   - Assets/Scenes/Store.unity
   - Assets/Scenes/Game Over.unity
   playerPath: C:/Users/computer/Documents/A_MONDO/SCUOLA/Lvl5.2_1/The Almighty/Builds/FlyingAntics
-    1.6/Flying Antics.exe
+    1.7/Flying Antics.exe
