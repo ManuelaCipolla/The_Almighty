@@ -3205,8 +3205,6 @@ MonoBehaviour:
   _boxVolume: 0.5
   _enemySound: {fileID: 8300000, guid: 70dfb7454d45ebe4e88ece9e6ba904f2, type: 3}
   _enemyVolume: 0.5
-  _deathSound: {fileID: 8300000, guid: 8c0e50a1e00dbab4881b65829c23d0fc, type: 3}
-  _deathVolume: 0.5
 --- !u!212 &1058228361
 SpriteRenderer:
   m_ObjectHideFlags: 0

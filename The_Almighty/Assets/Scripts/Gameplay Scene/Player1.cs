@@ -265,7 +265,7 @@ public class Player1 : MonoBehaviour
         partDead.Play();
         //audio
         //audioSource.PlayOneShot(_deathSound, _deathVolume);
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(1f);
         Destroy(gameObject);
         SceneManager.LoadScene("Game Over");
     }
