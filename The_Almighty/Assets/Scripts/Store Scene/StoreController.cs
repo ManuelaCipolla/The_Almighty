@@ -115,8 +115,8 @@ public class StoreController : MonoBehaviour
         //for audio to play
         audioSource = GetComponent<AudioSource>();
 
-        MoneyToBuy -= 500;
-        MoneyToBuyBG -= 300;
+        MoneyToBuy -= 300;
+        MoneyToBuyBG -= 100;
         
                     // CHEATS  //
         
@@ -711,7 +711,7 @@ public class StoreController : MonoBehaviour
     // BUY PLAYERS //
     public void BuyMagicianOnClick()
     {
-        if(PlayerPrefs.GetInt("HighCoins") >= 500)
+        if(PlayerPrefs.GetInt("HighCoins") >= 300)
         {
             PlayerPrefs.SetInt("HighCoins", Currency + MoneyToBuy);
             Debug.Log("Mage Bought");
@@ -732,7 +732,7 @@ public class StoreController : MonoBehaviour
 
     public void BuyBearOnClick()
     {
-        if(PlayerPrefs.GetInt("HighCoins") >= 500)
+        if(PlayerPrefs.GetInt("HighCoins") >= 300)
         {
             PlayerPrefs.SetInt("HighCoins", Currency + MoneyToBuy);
             Debug.Log("Bear bought");
@@ -775,7 +775,7 @@ public class StoreController : MonoBehaviour
     // BUY ITEMS ON CLICK //
     public void BuyItem2_OnClick()
     {
-        if(PlayerPrefs.GetInt("HighCoins") >= 300)
+        if(PlayerPrefs.GetInt("HighCoins") >= 100)
         {
             PlayerPrefs.SetInt("HighCoins", Currency + MoneyToBuyBG);
             Debug.Log("BG2 bought");
@@ -795,7 +795,7 @@ public class StoreController : MonoBehaviour
 
     public void BuyItem3_OnClick()
     {
-        if(PlayerPrefs.GetInt("HighCoins") >= 300)
+        if(PlayerPrefs.GetInt("HighCoins") >= 100)
         {
             PlayerPrefs.SetInt("HighCoins", Currency + MoneyToBuyBG);
             Debug.Log("BG3 bought");
@@ -815,7 +815,7 @@ public class StoreController : MonoBehaviour
 
     public void BuyItem4_OnClick()
     {
-        if(PlayerPrefs.GetInt("HighCoins") >= 300)
+        if(PlayerPrefs.GetInt("HighCoins") >= 100)
         {
             PlayerPrefs.SetInt("HighCoins", Currency + MoneyToBuyBG);
             Debug.Log("BG4 bought");
@@ -835,7 +835,7 @@ public class StoreController : MonoBehaviour
 
     public void BuyItem5_OnClick()
     {
-        if(PlayerPrefs.GetInt("HighCoins") >= 300)
+        if(PlayerPrefs.GetInt("HighCoins") >= 100)
         {
             PlayerPrefs.SetInt("HighCoins", Currency + MoneyToBuyBG);
             Debug.Log("BG5 bought");
@@ -855,7 +855,7 @@ public class StoreController : MonoBehaviour
 
     public void BuyItem6_OnClick()
     {
-        if(PlayerPrefs.GetInt("HighCoins") >= 300)
+        if(PlayerPrefs.GetInt("HighCoins") >= 100)
         {
             PlayerPrefs.SetInt("HighCoins", Currency + MoneyToBuyBG);
             Debug.Log("BG6 bought");
@@ -875,7 +875,7 @@ public class StoreController : MonoBehaviour
 
     public void BuyItem7_OnClick()
     {
-        if(PlayerPrefs.GetInt("HighCoins") >= 300)
+        if(PlayerPrefs.GetInt("HighCoins") >= 100)
         {
             PlayerPrefs.SetInt("HighCoins", Currency + MoneyToBuyBG);
             Debug.Log("BG7 bought");
@@ -895,7 +895,7 @@ public class StoreController : MonoBehaviour
 
     public void BuyItem8_OnClick()
     {
-        if(PlayerPrefs.GetInt("HighCoins") >= 300)
+        if(PlayerPrefs.GetInt("HighCoins") >= 100)
         {
             PlayerPrefs.SetInt("HighCoins", Currency + MoneyToBuyBG);
             Debug.Log("BG8 bought");
@@ -915,7 +915,7 @@ public class StoreController : MonoBehaviour
 
     public void BuyItem9_OnClick()
     {
-        if(PlayerPrefs.GetInt("HighCoins") >= 300)
+        if(PlayerPrefs.GetInt("HighCoins") >= 100)
         {
             PlayerPrefs.SetInt("HighCoins", Currency + MoneyToBuyBG);
             Debug.Log("BG9 bought");
@@ -935,7 +935,7 @@ public class StoreController : MonoBehaviour
 
     public void BuyItem10_OnClick()
     {
-        if(PlayerPrefs.GetInt("HighCoins") >= 300)
+        if(PlayerPrefs.GetInt("HighCoins") >= 100)
         {
             PlayerPrefs.SetInt("HighCoins", Currency + MoneyToBuyBG);
             Debug.Log("BG10 bought");
@@ -955,7 +955,7 @@ public class StoreController : MonoBehaviour
 
     public void BuyItem11_OnClick()
     {
-        if(PlayerPrefs.GetInt("HighCoins") >= 300)
+        if(PlayerPrefs.GetInt("HighCoins") >= 100)
         {
             PlayerPrefs.SetInt("HighCoins", Currency + MoneyToBuyBG);
             Debug.Log("BG11 bought");
@@ -975,7 +975,7 @@ public class StoreController : MonoBehaviour
 
     public void BuyItem12_OnClick()
     {
-        if(PlayerPrefs.GetInt("HighCoins") >= 300)
+        if(PlayerPrefs.GetInt("HighCoins") >= 100)
         {
             PlayerPrefs.SetInt("HighCoins", Currency + MoneyToBuyBG);
             Debug.Log("BG12 bought");
@@ -995,7 +995,7 @@ public class StoreController : MonoBehaviour
 
     public void BuyItem13_OnClick()
     {
-        if(PlayerPrefs.GetInt("HighCoins") >= 300)
+        if(PlayerPrefs.GetInt("HighCoins") >= 100)
         {
             PlayerPrefs.SetInt("HighCoins", Currency + MoneyToBuyBG);
             Debug.Log("BG13 bought");
@@ -1015,7 +1015,7 @@ public class StoreController : MonoBehaviour
 
     public void BuyItem14_OnClick()
     {
-        if(PlayerPrefs.GetInt("HighCoins") >= 300)
+        if(PlayerPrefs.GetInt("HighCoins") >= 100)
         {
             PlayerPrefs.SetInt("HighCoins", Currency + MoneyToBuyBG);
             Debug.Log("BG14 bought");
@@ -1035,7 +1035,7 @@ public class StoreController : MonoBehaviour
 
     public void BuyItem15_OnClick()
     {
-        if(PlayerPrefs.GetInt("HighCoins") >= 300)
+        if(PlayerPrefs.GetInt("HighCoins") >= 100)
         {
             PlayerPrefs.SetInt("HighCoins", Currency + MoneyToBuyBG);
             Debug.Log("BG15 bought");
@@ -1055,7 +1055,7 @@ public class StoreController : MonoBehaviour
 
     public void BuyItem16_OnClick()
     {
-        if(PlayerPrefs.GetInt("HighCoins") >= 300)
+        if(PlayerPrefs.GetInt("HighCoins") >= 100)
         {
             PlayerPrefs.SetInt("HighCoins", Currency + MoneyToBuyBG);
             Debug.Log("BG16 bought");
@@ -1075,7 +1075,7 @@ public class StoreController : MonoBehaviour
 
     public void BuyItem17_OnClick()
     {
-        if(PlayerPrefs.GetInt("HighCoins") >= 300)
+        if(PlayerPrefs.GetInt("HighCoins") >= 100)
         {
             PlayerPrefs.SetInt("HighCoins", Currency + MoneyToBuyBG);
             Debug.Log("BG17 bought");
@@ -1095,7 +1095,7 @@ public class StoreController : MonoBehaviour
 
     public void BuyItem18_OnClick()
     {
-        if(PlayerPrefs.GetInt("HighCoins") >= 300)
+        if(PlayerPrefs.GetInt("HighCoins") >= 100)
         {
             PlayerPrefs.SetInt("HighCoins", Currency + MoneyToBuyBG);
             Debug.Log("BG18 bought");

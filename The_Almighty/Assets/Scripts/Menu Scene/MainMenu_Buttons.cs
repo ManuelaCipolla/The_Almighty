@@ -18,8 +18,10 @@ public class MainMenu_Buttons : MonoBehaviour
     //Tutorial
     public GameObject tutorialHolder;
 
+
     void Start()
     {
+
         //HighScore
         highScore.text = "HIGHSCORE " + Mathf.Round(PlayerPrefs.GetFloat("highScore"));
         Coins.text = "COINS " + PlayerPrefs.GetInt("HighCoins");
@@ -30,8 +32,6 @@ public class MainMenu_Buttons : MonoBehaviour
         //backbutton
         Button btn = Back.GetComponent<Button>();
         btn.onClick.AddListener(SettingsBackButton);
-
-        
     }
 
     public void TutorialButton()

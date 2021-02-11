@@ -179,6 +179,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _collider: {fileID: 5094378638860108622}
-  _speed: 20
+  _speed: 13
   RRminimum: -3
   RRmaximum: 3

@@ -67,6 +67,8 @@ public class Player1 : MonoBehaviour
     private ParticleSystem CoinStars;
     [SerializeField]
     private ParticleSystem FuelEffect;
+    [SerializeField]
+    private GameObject RedEffect;
 
     //audio
     [Header("Audio")]
@@ -99,6 +101,7 @@ public class Player1 : MonoBehaviour
         highCoin = PlayerPrefs.GetInt("HighCoins");
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        RedEffect.SetActive(false);
         //spawning point for p1
         transform.position = new Vector3(-0.07f, -4f, 0);
         //health
@@ -236,10 +239,12 @@ public class Player1 : MonoBehaviour
         for (int i = 0; i < numberOfFlashes; i++)
         {
             anim.enabled = false;
+            RedEffect.SetActive(true);
             theSR.color = new Color(1f, 0.5f, 0.5f, 0.5f);
             yield return new WaitForSeconds(flashDuration);
             theSR.color = new Color(1f, 1f, 1f, 1f);
             anim.enabled = true;
+            RedEffect.SetActive(false);
             yield return new WaitForSeconds(flashDuration);
         }
         theSR.color = new Color(1f, 1f, 1f, 1f);

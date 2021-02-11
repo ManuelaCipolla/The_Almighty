@@ -35,10 +35,18 @@ public class mainMenu_Controller : MonoBehaviour
 
     [SerializeField]
     private GameObject _tutorialText;
+        public StoreController StoreController;
     
     void Start()
     {   
         rb = GetComponent<Rigidbody2D>();   
+        StoreController = GetComponent<StoreController>(); 
+        StoreController.BackgroundValue = PlayerPrefs.GetInt("BackgroundValue");
+        if(StoreController.BackgroundValue == 0)
+        {
+            StoreController.BackgroundValue = 1;
+            PlayerPrefs.SetInt("BackgroundValue", 1);
+        }
         //Spawn position
         transform.position = new Vector3(0.04f, -2.67f, 0);
 
@@ -48,7 +56,7 @@ public class mainMenu_Controller : MonoBehaviour
         //backbutton
         Button btn = Back.GetComponent<Button>();
         btn.onClick.AddListener(TaskOnClick);
-        
+
     }
 
     void FixedUpdate() 

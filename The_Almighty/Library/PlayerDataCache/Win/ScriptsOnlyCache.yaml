@@ -400,6 +400,10 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
+    - Class: 82
+      Script: {instanceID: 0}
+    - Class: 83
+      Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
     - Class: 111
@@ -437,6 +441,12 @@ ScriptsOnlyBuild:
     - Class: 223
       Script: {instanceID: 0}
     - Class: 224
+      Script: {instanceID: 0}
+    - Class: 241
+      Script: {instanceID: 0}
+    - Class: 243
+      Script: {instanceID: 0}
+    - Class: 245
       Script: {instanceID: 0}
   scriptHashData:
   - hash:
@@ -717,7 +727,7 @@ ScriptsOnlyBuild:
     className: SignalTrack
   - hash:
       serializedVersion: 2
-      Hash: 65202bd6772545d66a6e654790d7ec91
+      Hash: 6effd9176bb4eb85bb8dac6b9814a88f
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: CoinsBehaviour
@@ -801,7 +811,7 @@ ScriptsOnlyBuild:
     className: VerticalLayoutGroup
   - hash:
       serializedVersion: 2
-      Hash: 51861cdce1924a0e80d50d8c69fd0171
+      Hash: 0048cbb51548c60c9d6b17ab1059493d
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: StoreController
@@ -1035,7 +1045,7 @@ ScriptsOnlyBuild:
     className: SignalEmitter
   - hash:
       serializedVersion: 2
-      Hash: 3b6090f89f56d95f30c5385c97a43cfd
+      Hash: 87486f58503e8ba55102e5111cef36fc
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Player1
@@ -1053,7 +1063,7 @@ ScriptsOnlyBuild:
     className: HUD_p2
   - hash:
       serializedVersion: 2
-      Hash: 46785f810489444f9f111b68232d88b6
+      Hash: bcef972b43e84dbac7a2bbfda1b4182d
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: mainMenu_Controller
@@ -1076,5 +1086,4 @@ ScriptsOnlyBuild:
   - Assets/Scenes/Gameplay.unity
   - Assets/Scenes/Store.unity
   - Assets/Scenes/Game Over.unity
-  playerPath: C:/Users/computer/Documents/A_MONDO/SCUOLA/Lvl5.2_1/The Almighty/Builds/FlyingAntics
-    1.7/Flying Antics.exe
+  playerPath: C:/Users/computer/Desktop/Try_BG/Flying Antics.exe
