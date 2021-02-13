@@ -257,7 +257,7 @@ public class Player1 : MonoBehaviour
         Debug.Log("YOU DEAD FUCKER");
         StartCoroutine(DeathRoutine());
         PlayerPrefs.SetInt("CurrentCoins", coins + coinScore);
-        PlayerPrefs.SetInt("HighCoins", coins + coinScore + highCoin);
+        PlayerPrefs.SetInt("HighCoins", coins + coinScore);
 
         
     }
